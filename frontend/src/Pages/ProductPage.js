@@ -7,7 +7,7 @@ import Loader from '../components/Loader'
 import Message from '../components/Message'
 import Rating from '../components/Rating'
 const ProductPage = ({ match, history }) => {
-  const [quantity, setQuantity] = useState(0)
+  const [qty, setQty] = useState(1)
   const dispatch = useDispatch()
   const productDetails = useSelector(state => state.productDetails)
   const { loading, error, product } = productDetails
@@ -16,7 +16,7 @@ const ProductPage = ({ match, history }) => {
   }, [dispatch, match])
 
   const addToCartHandler = () => {
-    history.push(`/cart/${match.params.id}?qty=${quantity}`)
+    history.push(`/cart/${match.params.id}?qty=${qty}`)
   }
 
   return (
@@ -76,32 +76,29 @@ const ProductPage = ({ match, history }) => {
                       <Col>
                         <Form.Control
                           as='select'
-                          value={quantity}
-                          onChange={e => setQuantity(e.target.value)}
+                          value={qty}
+                          onChange={e => setQty(e.target.value)}
                         >
-                          {[...Array(product.countInStock).keys()].map(
-                            count => (
-                              <option key={count + 1} value={count + 1}>
-                                {count + 1}
-                              </option>
-                            )
-                          )}
+                          {[...Array(product.countInStock).keys()].map(x => (
+                            <option key={x + 1} value={x + 1}>
+                              {x + 1}
+                            </option>
+                          ))}
                         </Form.Control>
                       </Col>
                     </Row>
                   </ListGroup.Item>
                 )}
+
                 <ListGroup.Item>
-                  <Row>
-                    <Button
-                      onClick={addToCartHandler}
-                      className='btn-block'
-                      type='button'
-                      disabled={product.countInStock === 0}
-                    >
-                      Add To Cart
-                    </Button>
-                  </Row>
+                  <Button
+                    onClick={addToCartHandler}
+                    className='btn-block'
+                    type='button'
+                    disabled={product.countInStock === 0}
+                  >
+                    Add To Cart
+                  </Button>
                 </ListGroup.Item>
               </ListGroup>
             </Card>
