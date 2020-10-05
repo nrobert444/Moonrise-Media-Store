@@ -29,18 +29,18 @@ const PaymentPage = ({ history }) => {
       <Form onSubmit={submitHandler}>
         <Form.Group controlId='paymentMethod'>
           <Form.Label as='legend'>Select Payment Method</Form.Label>
+          <Col>
+            <Form.Check
+              type='radio'
+              label='PayPal or Credit Card'
+              id='PayPal'
+              name='paymentMethod'
+              value='PayPal'
+              checked
+              onChange={e => setPaymentMethod(e.target.value)}
+            ></Form.Check>
+          </Col>
         </Form.Group>
-        <Col>
-          <Form.Check
-            type='radio'
-            label='PayPal or Credit Card'
-            id='PayPal'
-            name='paymentMethod'
-            value='PayPal'
-            checked
-            onChange={e => setPaymentMethod(e.target.value)}
-          ></Form.Check>
-        </Col>
         <Button type='submit' variant='primary'>
           Continue to Checkout
         </Button>
