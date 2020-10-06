@@ -77,9 +77,7 @@ const updateOrderToPaid = asyncHandler(async (req, res) => {
 //@route put /api/orders/myorders
 //@access private
 const getMyOrders = asyncHandler(async (req, res) => {
-  const orders = await Order.find({
-    user: req.user._id
-  })
+  const orders = await Order.find({ user: req.user._id })
   res.json(orders)
 })
 
