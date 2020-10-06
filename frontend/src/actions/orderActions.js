@@ -8,8 +8,7 @@ import {
   ORDER_DETAILS_REQUEST,
   ORDER_PAY_REQUEST,
   ORDER_PAY_SUCCESS,
-  ORDER_PAY_FAIL,
-  ORDER_PAY_RESET
+  ORDER_PAY_FAIL
 } from '../constants/orderConstants'
 
 const createOrder = order => async (dispatch, getState) => {
@@ -103,4 +102,4 @@ const payOrder = (orderId, paymentResult) => async (dispatch, getState) => {
   }
 }
 
-export { createOrder, getOrderDetails }
+export { createOrder, getOrderDetails, payOrder }
