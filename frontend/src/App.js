@@ -12,6 +12,7 @@ import PaymentPage from './Pages/PaymentPage'
 import OrderPage from './Pages/OrderPage'
 import PlaceOrderPage from './Pages/PlaceOrderPage'
 import UserListPage from './Pages/UserListPage'
+import UserEditPage from './Pages/UserEditPage'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 import { Container } from 'react-bootstrap'
 const App = () => {
@@ -26,6 +27,7 @@ const App = () => {
           <Route path='/register' component={RegisterPage} />
           <Route path='/profile' component={ProfilePage} />
           <Route path='/admin/userlist' component={UserListPage} />
+          <Route path='/admin/user/:id/edit' component={UserEditPage} />
           <Route path='/shipping' component={ShippingPage} />
           <Route path='/payment' component={PaymentPage} />
           <Route path='/placeorder' component={PlaceOrderPage} />
