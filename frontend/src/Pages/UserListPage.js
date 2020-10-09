@@ -6,9 +6,12 @@ import Loader from '../components/Loader'
 import Message from '../components/Message'
 import { listUsers } from '../actions/userActions'
 const UserListPage = ({ history }) => {
+
   const dispatch = useDispatch()
+
   const userList = useSelector(state => state.userList)
   const { loading, error, users } = userList
+  
   const userLogin = useSelector(state => state.userLogin)
   const { userInfo } = userLogin
 
@@ -18,7 +21,7 @@ const UserListPage = ({ history }) => {
     } else {
       history.push('/login')
     }
-  }, [dispatch, history])
+  }, [dispatch, history, userInfo])
 
   const deleteHandler = id => {
     console.log('user deleted')
