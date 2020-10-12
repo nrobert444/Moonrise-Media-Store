@@ -4,6 +4,7 @@ import Header from './components/Header'
 import HomePage from './Pages/HomePage'
 import ProductPage from './Pages/ProductPage'
 import ProductListPage from './Pages/ProductListPage'
+import ProductEditPage from './Pages/ProductEditPage'
 import CartPage from './Pages/CartPage'
 import LoginPage from './Pages/LoginPage'
 import RegisterPage from './Pages/RegisterPage'
@@ -30,6 +31,7 @@ const App = () => {
           <Route path='/admin/userlist' component={UserListPage} />
           <Route path='/admin/user/:id/edit' component={UserEditPage} />
           <Route path='/admin/productlist' component={ProductListPage} />
+          <Route path='/admin/product/:id/edit' component={ProductEditPage} />
           <Route path='/shipping' component={ShippingPage} />
           <Route path='/payment' component={PaymentPage} />
           <Route path='/placeorder' component={PlaceOrderPage} />
