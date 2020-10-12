@@ -40,7 +40,7 @@ const ProductListPage = ({ history, match }) => {
         </Col>
         <Col className='text-right'>
           <Button className='my-3' onClick={createProductHandler}>
-            <i className='fas fa-plus'></i>Create Product
+            <i className='fas fa-plus'></i> Create Product
           </Button>
         </Col>
       </Row>
@@ -68,7 +68,7 @@ const ProductListPage = ({ history, match }) => {
                 <td>{product.category}</td>
                 <td>{product.brand}</td>
                 <td>
-                  <LinkContainer to={`/admin/products/${product._id}/edit`}>
+                  <LinkContainer to={`/admin/product/${product._id}/edit`}>
                     <Button variant='light' className='btn-sm'>
                       <i className='fas fa-edit'></i>
                     </Button>
