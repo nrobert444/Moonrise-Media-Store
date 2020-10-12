@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { Row, Col, Image, ListGroup, Card, Button, Form } from 'react-bootstrap'
-import { ListProductDetails } from '../actions/productActions'
+import { listProductDetails } from '../actions/productActions'
 import Loader from '../components/Loader'
 import Message from '../components/Message'
 import Rating from '../components/Rating'
@@ -12,7 +12,7 @@ const ProductPage = ({ match, history }) => {
   const productDetails = useSelector(state => state.productDetails)
   const { loading, error, product } = productDetails
   useEffect(() => {
-    dispatch(ListProductDetails(match.params.id))
+    dispatch(listProductDetails(match.params.id))
   }, [dispatch, match])
 
   const addToCartHandler = () => {

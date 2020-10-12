@@ -11,7 +11,7 @@ import {
 } from '../actions/productActions'
 import { PRODUCT_CREATE_RESET } from '../constants/productContstants'
 
-const ProductListPage = ({ history, match }) => {
+const ProductListPage = ({ history }) => {
   const dispatch = useDispatch()
 
   const productList = useSelector(state => state.productList)

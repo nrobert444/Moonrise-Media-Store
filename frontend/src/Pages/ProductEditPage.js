@@ -5,7 +5,8 @@ import { Button, Form } from 'react-bootstrap'
 import Loader from '../components/Loader'
 import Message from '../components/Message'
 import FormContainer from '../components/FormContainer'
-import { ListProductDetails } from '../actions/productActions'
+import { listProductDetails, updateProduct } from '../actions/productActions'
+import { PRODUCT_UPDATE_RESET } from '../constants/productContstants'
 
 const ProductEditPage = ({ match, history }) => {
   const productId = match.params.id
@@ -26,27 +27,42 @@ const ProductEditPage = ({ match, history }) => {
   const {
     loading: loadingUpdate,
     error: errorUpdate,
-    // success: successUpdate,
-    // product: updateProduct
+    success: successUpdate
   } = productUpdate
 
   useEffect(() => {
-    if (!product.name || product._id !== productId) {
-      dispatch(ListProductDetails(productId))
+    if (successUpdate) {
+      dispatch({ type: PRODUCT_UPDATE_RESET })
+      history.push('/admin/productlist')
     } else {
-      setName(product.name)
-      setPrice(product.price)
-      setImage(product.image)
-      setBrand(product.brand)
-      setCategory(product.category)
-      setCountInStock(product.countInStock)
-      setDescription(product.description)
+      if (!product.name || product._id !== productId) {
+        dispatch(listProductDetails(productId))
+      } else {
+        setName(product.name)
+        setPrice(product.price)
+        setImage(product.image)
+        setBrand(product.brand)
+        setCategory(product.category)
+        setCountInStock(product.countInStock)
+        setDescription(product.description)
+      }
     }
-  }, [productId, history, dispatch, product])
+  }, [productId, history, dispatch, product, successUpdate])
 
   const submitHandler = e => {
     e.preventDefault()
-    //update product
+    dispatch(
+      updateProduct({
+        _id: productId,
+        name,
+        price,
+        category,
+        brand,
+        countInStock,
+        description,
+        image
+      })
+    )
   }
 
   return (
