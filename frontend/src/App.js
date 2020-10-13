@@ -12,6 +12,7 @@ import ProfilePage from './Pages/ProfilePage'
 import ShippingPage from './Pages/ShippingPage'
 import PaymentPage from './Pages/PaymentPage'
 import OrderPage from './Pages/OrderPage'
+import OrderListPage from './Pages/OrderListPage'
 import PlaceOrderPage from './Pages/PlaceOrderPage'
 import UserListPage from './Pages/UserListPage'
 import UserEditPage from './Pages/UserEditPage'
@@ -32,6 +33,7 @@ const App = () => {
           <Route path='/admin/user/:id/edit' component={UserEditPage} />
           <Route path='/admin/productlist' component={ProductListPage} />
           <Route path='/admin/product/:id/edit' component={ProductEditPage} />
+          <Route path='/admin/orderlist' component={OrderListPage} />
           <Route path='/shipping' component={ShippingPage} />
           <Route path='/payment' component={PaymentPage} />
           <Route path='/placeorder' component={PlaceOrderPage} />
