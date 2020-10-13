@@ -38,6 +38,7 @@ const App = () => {
           <Route path='/payment' component={PaymentPage} />
           <Route path='/placeorder' component={PlaceOrderPage} />
           <Route path='/order/:id' component={OrderPage} />
+          <Route path='/search/:keyword' component={HomePage} />
           <Route exact path='/' component={HomePage} />
         </Container>
       </main>
