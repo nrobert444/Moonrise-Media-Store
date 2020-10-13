@@ -31,14 +31,19 @@ const App = () => {
           <Route path='/profile' component={ProfilePage} />
           <Route path='/admin/userlist' component={UserListPage} />
           <Route path='/admin/user/:id/edit' component={UserEditPage} />
-          <Route path='/admin/productlist' component={ProductListPage} />
+          <Route exact path='/admin/productlist' component={ProductListPage} />
+          <Route
+            exact
+            path='/admin/productlist/:pageNumber'
+            component={ProductListPage}
+          />
           <Route path='/admin/product/:id/edit' component={ProductEditPage} />
           <Route path='/admin/orderlist' component={OrderListPage} />
           <Route path='/shipping' component={ShippingPage} />
           <Route path='/payment' component={PaymentPage} />
           <Route path='/placeorder' component={PlaceOrderPage} />
           <Route path='/order/:id' component={OrderPage} />
-          <Route path='/search/:keyword' component={HomePage} />
+          <Route exact path='/search/:keyword' component={HomePage} />
           <Route exact path='/page/:pageNumber' component={HomePage} />
           <Route
             exact
