@@ -14,7 +14,7 @@ const ProductEditPage = ({ match, history }) => {
   const [name, setName] = useState('')
   const [price, setPrice] = useState(0)
   const [image, setImage] = useState('')
-  const [brand, setBrand] = useState('')
+  const [upc, setUpc] = useState(0)
   const [category, setCategory] = useState('')
   const [countInStock, setCountInStock] = useState(0)
   const [description, setDescription] = useState('')
@@ -43,7 +43,7 @@ const ProductEditPage = ({ match, history }) => {
         setName(product.name)
         setPrice(product.price)
         setImage(product.image)
-        setBrand(product.brand)
+        setUpc(product.upc)
         setCategory(product.category)
         setCountInStock(product.countInStock)
         setDescription(product.description)
@@ -79,7 +79,7 @@ const ProductEditPage = ({ match, history }) => {
         name,
         price,
         category,
-        brand,
+        upc,
         countInStock,
         description,
         image
@@ -139,13 +139,13 @@ const ProductEditPage = ({ match, history }) => {
             ></Form.File>
             {uploading && <Loader />}
 
-            <Form.Group controlId='brand'>
-              <Form.Label>Brand</Form.Label>
+            <Form.Group controlId='upc'>
+              <Form.Label>UPC</Form.Label>
               <Form.Control
-                type='text'
-                placeholder='Enter brand'
-                value={brand}
-                onChange={e => setBrand(e.target.value)}
+                type='number'
+                placeholder='Enter UPC'
+                value={upc}
+                onChange={e => setUpc(e.target.value)}
               ></Form.Control>
             </Form.Group>
 
@@ -169,7 +169,7 @@ const ProductEditPage = ({ match, history }) => {
               ></Form.Control>
             </Form.Group>
 
-            <Form.Group controlId='Description'>
+            <Form.Group controlId='description'>
               <Form.Label>Description</Form.Label>
               <Form.Control
                 type='text'
