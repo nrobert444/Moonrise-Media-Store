@@ -18,6 +18,9 @@ import UserEditPage from './Pages/UserEditPage'
 import ProductListPage from './Pages/ProductListPage'
 import ProductEditPage from './Pages/ProductEditPage'
 import OrderListPage from './Pages/OrderListPage'
+import BlurayPage from './Pages/BlurayPage'
+import DvdPage from './Pages/DvdPage'
+import GamePage from './Pages/GamePage'
 
 const App = () => {
   return (
@@ -33,6 +36,9 @@ const App = () => {
           <Route path='/register' component={RegisterPage} />
           <Route path='/profile' component={ProfilePage} />
           <Route path='/product/:id' component={ProductPage} />
+          <Route path='/shop/dvd' component={DvdPage} />
+          <Route path='/shop/bluray' component={BlurayPage} />
+          <Route path='/shop/games' component={GamePage} />
           <Route path='/cart/:id?' component={CartPage} />
           <Route path='/admin/userlist' component={UserListPage} />
           <Route path='/admin/user/:id/edit' component={UserEditPage} />

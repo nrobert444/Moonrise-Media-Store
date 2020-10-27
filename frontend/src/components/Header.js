@@ -62,6 +62,17 @@ const Header = () => {
                   </LinkContainer>
                 </NavDropdown>
               )}
+              <NavDropdown title='Shop' id='shopmenu'>
+                  <LinkContainer to='/shop/dvd'>
+                    <NavDropdown.Item>DVD</NavDropdown.Item>
+                  </LinkContainer>
+                  <LinkContainer to='/shop/bluray'>
+                    <NavDropdown.Item>Blu-Ray</NavDropdown.Item>
+                  </LinkContainer>
+                  <LinkContainer to='/shop/games'>
+                    <NavDropdown.Item>Games</NavDropdown.Item>
+                  </LinkContainer>
+                </NavDropdown>
             </Nav>
           </Navbar.Collapse>
         </Container>
