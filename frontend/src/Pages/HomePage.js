@@ -26,9 +26,7 @@ const HomePage = ({ match }) => {
   return (
     <>
       <Meta />
-      <Link to='/' className='btn btn-light'>
-        Go Back
-      </Link>
+
       {loading ? (
         <Loader />
       ) : error ? (
