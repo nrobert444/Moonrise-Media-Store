@@ -26,19 +26,40 @@ const HomePage = ({ match }) => {
   return (
     <>
       <Meta />
-
       {loading ? (
         <Loader />
       ) : error ? (
         <Message variant='danger'>{error}</Message>
       ) : (
-        <Row>
-          {products.map(product => (
-            <Col sm={12} md={6} lg={4} xl={3} key={product._id}>
-              <Product product={product} />
-            </Col>
-          ))}
-        </Row>
+        <>
+          <Row>
+            {products
+              .filter(product => product.category === 'bluray')
+              .map(product => (
+                <Col sm={12} md={6} lg={4} xl={3} key={product._id}>
+                  <Product product={product} />
+                </Col>
+              ))}
+          </Row>
+          <Row>
+            {products
+              .filter(product => product.category === 'game')
+              .map(product => (
+                <Col sm={12} md={6} lg={4} xl={3} key={product._id}>
+                  <Product product={product} />
+                </Col>
+              ))}
+          </Row>
+          <Row>
+            {products
+              .filter(product => product.category === 'dvd')
+              .map(product => (
+                <Col sm={12} md={6} lg={4} xl={3} key={product._id}>
+                  <Product product={product} />
+                </Col>
+              ))}
+          </Row>
+        </>
       )}
       <Paginate pages={pages} page={page} keyword={keyword ? keyword : ''} />
     </>
