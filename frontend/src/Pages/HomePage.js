@@ -32,6 +32,21 @@ const HomePage = ({ match }) => {
         <Message variant='danger'>{error}</Message>
       ) : (
         <>
+          <Link to='/shop/dvd'>
+            <strong>DVDs</strong>- See All
+          </Link>
+          <Row>
+            {products
+              .filter(product => product.category === 'dvd')
+              .map(product => (
+                <Col sm={12} md={6} lg={4} xl={3} key={product._id}>
+                  <Product product={product} />
+                </Col>
+              ))}
+          </Row>
+          <Link to='/shop/bluray'>
+            <strong>Blu-Rays</strong>- See All
+          </Link>
           <Row>
             {products
               .filter(product => product.category === 'bluray')
@@ -41,18 +56,12 @@ const HomePage = ({ match }) => {
                 </Col>
               ))}
           </Row>
+          <Link to='/shop/game'>
+            <strong>Games</strong>- See All
+          </Link>
           <Row>
             {products
               .filter(product => product.category === 'game')
-              .map(product => (
-                <Col sm={12} md={6} lg={4} xl={3} key={product._id}>
-                  <Product product={product} />
-                </Col>
-              ))}
-          </Row>
-          <Row>
-            {products
-              .filter(product => product.category === 'dvd')
               .map(product => (
                 <Col sm={12} md={6} lg={4} xl={3} key={product._id}>
                   <Product product={product} />
