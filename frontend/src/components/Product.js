@@ -3,7 +3,7 @@ import { Card } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 
 const Product = ({ product }) => {
-  const { _id, name, image, price } = product
+  const { _id, name, image, price, condition } = product
   return (
     <>
       <Card className='my-3 p-3 rounded'>
@@ -16,6 +16,7 @@ const Product = ({ product }) => {
               <strong>{name}</strong>
             </Card.Title>
           </Link>
+          <Card.Text as='h6'>{condition}</Card.Text>
           <Card.Text as='h3'>${price}</Card.Text>
         </Card.Body>
       </Card>
