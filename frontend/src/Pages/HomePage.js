@@ -38,11 +38,15 @@ const HomePage = ({ match }) => {
           <Row>
             {products
               .filter(product => product.category === 'dvd')
-              .map(product => (
-                <Col sm={12} md={6} lg={4} xl={3} key={product._id}>
-                  <Product product={product} />
-                </Col>
-              ))}
+              .map((product, idx) =>
+                idx < 3 ? (
+                  <Col sm={12} md={6} lg={4} xl={3} key={product._id}>
+                    <Product product={product} />
+                  </Col>
+                ) : (
+                  ''
+                )
+              )}
           </Row>
           <Link to='/shop/bluray'>
             <strong>Blu-Rays</strong>- See All
@@ -50,11 +54,15 @@ const HomePage = ({ match }) => {
           <Row>
             {products
               .filter(product => product.category === 'bluray')
-              .map(product => (
-                <Col sm={12} md={6} lg={4} xl={3} key={product._id}>
-                  <Product product={product} />
-                </Col>
-              ))}
+              .map((product, idx) =>
+                idx < 3 ? (
+                  <Col sm={12} md={6} lg={4} xl={3} key={product._id}>
+                    <Product product={product} />
+                  </Col>
+                ) : (
+                  ''
+                )
+              )}
           </Row>
           <Link to='/shop/game'>
             <strong>Games</strong>- See All
@@ -62,11 +70,15 @@ const HomePage = ({ match }) => {
           <Row>
             {products
               .filter(product => product.category === 'game')
-              .map(product => (
-                <Col sm={12} md={6} lg={4} xl={3} key={product._id}>
-                  <Product product={product} />
-                </Col>
-              ))}
+              .map((product, idx) =>
+                idx < 3 ? (
+                  <Col sm={12} md={6} lg={4} xl={3} key={product._id}>
+                    <Product product={product} />
+                  </Col>
+                ) : (
+                  ''
+                )
+              )}
           </Row>
         </>
       )}
