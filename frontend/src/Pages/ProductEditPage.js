@@ -16,6 +16,7 @@ const ProductEditPage = ({ match, history }) => {
   const [image, setImage] = useState('')
   const [upc, setUpc] = useState(0)
   const [category, setCategory] = useState('')
+  const [condition, setCondition] = useState('used')
   const [countInStock, setCountInStock] = useState(0)
   const [description, setDescription] = useState('')
   const [uploading, setUploading] = useState(false)
@@ -44,6 +45,7 @@ const ProductEditPage = ({ match, history }) => {
         setPrice(product.price)
         setImage(product.image)
         setUpc(product.upc)
+        setCondition(product.condition)
         setCategory(product.category)
         setCountInStock(product.countInStock)
         setDescription(product.description)
@@ -80,6 +82,7 @@ const ProductEditPage = ({ match, history }) => {
         price,
         category,
         upc,
+        condition,
         countInStock,
         description,
         image
@@ -156,6 +159,15 @@ const ProductEditPage = ({ match, history }) => {
                 placeholder='Enter count in stock'
                 value={countInStock}
                 onChange={e => setCountInStock(e.target.value)}
+              ></Form.Control>
+            </Form.Group>
+            <Form.Group controlId='condition'>
+              <Form.Label>Condition</Form.Label>
+              <Form.Control
+                type='text'
+                placeholder='Enter condition'
+                value={condition}
+                onChange={e => setCondition(e.target.value)}
               ></Form.Control>
             </Form.Group>
 

@@ -62,7 +62,7 @@ const createProduct = asyncHandler(async (req, res) => {
     upc: 0,
     category: 'Sample category',
     countInStock: 0,
-    // numReviews: 0,
+    condition: 'used',
     description: 'Sample description'
   })
 
@@ -80,6 +80,7 @@ const updateProduct = asyncHandler(async (req, res) => {
     image,
     upc,
     category,
+    condition,
     countInStock
   } = req.body
 
@@ -91,6 +92,7 @@ const updateProduct = asyncHandler(async (req, res) => {
     product.description = description
     product.image = image
     product.upc = upc
+    product.condition = condition
     product.category = category
     product.countInStock = countInStock
 

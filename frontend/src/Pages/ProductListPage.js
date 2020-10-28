@@ -95,6 +95,7 @@ const ProductListPage = ({ history, match }) => {
                 <th>NAME</th>
                 <th>PRICE</th>
                 <th>CATEGORY</th>
+                <th>CONDITION</th>
                 <th>UPC</th>
               </tr>
             </thead>
@@ -103,6 +104,7 @@ const ProductListPage = ({ history, match }) => {
                 <tr key={product._id}>
                   <td>{product._id}</td>
                   <td>{product.name}</td>
+                  <td>{product.condition}</td>
                   <td>${product.price}</td>
                   <td>{product.category}</td>
                   <td>{product.upc}</td>
