@@ -1,9 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { Row, Col, Image, Card } from 'react-bootstrap'
-import Loader from '../components/Loader'
-import Message from '../components/Message'
-
+import logo from '../assets/Moonrise Media LLC Logo.png'
 const AboutPage = () => {
   return (
     <>
@@ -11,11 +9,12 @@ const AboutPage = () => {
         Go Back
       </Link>
 
-      <Row>
+      <Row className='justify-content-md-center mb-5'>
         <Col md={4}>
-          {/* <Image src={} alt='moonrise logo' fluid rounded /> */}
+          <Image src={logo} alt='moonrise logo' fluid rounded />
         </Col>
       </Row>
+
       <Row>
         <Card>
           <Card.Body>
