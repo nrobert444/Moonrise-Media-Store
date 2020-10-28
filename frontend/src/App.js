@@ -2,6 +2,7 @@ import React from 'react'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 import { Container } from 'react-bootstrap'
 import Header from './components/Header'
+import AboutPage from './Pages/AboutPage'
 import Footer from './components/Footer'
 import HomePage from './Pages/HomePage'
 import ProductPage from './Pages/ProductPage'
@@ -57,6 +58,7 @@ const App = () => {
             component={HomePage}
             exact
           />
+          <Route path='/about' component={AboutPage} exact />
           <Route path='/' component={HomePage} exact />
         </Container>
       </main>
