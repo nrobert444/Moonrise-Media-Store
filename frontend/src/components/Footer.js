@@ -21,11 +21,9 @@ const Footer = () => {
               <Nav.Link href='https://www.linkedin.com/in/nicholas-roberto/'>
                 <FontAwesomeIcon className='fab fa-2x' icon={faLinkedin} />
               </Nav.Link>
-              <LinkContainer to='/contact'>
-                <Nav.Link>
-                  <FontAwesomeIcon className='fab fa-2x' icon={faTwitter} />
-                </Nav.Link>
-              </LinkContainer>
+              <Nav.Link href='https://twitter.com/Nichola55137683'>
+                <FontAwesomeIcon className='fab fa-2x' icon={faTwitter} />
+              </Nav.Link>
               <LinkContainer to='/contact'>
                 <Nav.Link>
                   <FontAwesomeIcon className='fab fa-2x' icon={faPhone} />{' '}

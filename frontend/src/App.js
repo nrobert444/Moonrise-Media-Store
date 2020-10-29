@@ -22,6 +22,7 @@ import OrderListPage from './Pages/OrderListPage'
 import BlurayPage from './Pages/BlurayPage'
 import DvdPage from './Pages/DvdPage'
 import GamePage from './Pages/GamePage'
+import ContactPage from './Pages/ContactPage'
 
 const App = () => {
   return (
@@ -59,6 +60,7 @@ const App = () => {
             exact
           />
           <Route path='/about' component={AboutPage} exact />
+          <Route path='/contact' component={ContactPage} exact />
           <Route path='/' component={HomePage} exact />
         </Container>
       </main>

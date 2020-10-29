@@ -8,7 +8,6 @@ import Loader from '../components/Loader'
 import Message from '../components/Message'
 import Paginate from '../components/Paginate'
 import Meta from '../components/Meta'
-// import ProductCarousel from '../components/ProductCarousel'
 
 const HomePage = ({ match }) => {
   const keyword = match.params.keyword
@@ -33,7 +32,9 @@ const HomePage = ({ match }) => {
       ) : (
         <>
           <Link to='/shop/dvd'>
-            <strong>DVDs</strong>- See All
+            <h4>
+              <strong>DVDs</strong>- See All
+            </h4>
           </Link>
           <Row>
             {products
@@ -49,7 +50,9 @@ const HomePage = ({ match }) => {
               )}
           </Row>
           <Link to='/shop/bluray'>
-            <strong>Blu-Rays</strong>- See All
+            <h4>
+              <strong>Blu-Rays</strong>- See All
+            </h4>
           </Link>
           <Row>
             {products
@@ -65,7 +68,9 @@ const HomePage = ({ match }) => {
               )}
           </Row>
           <Link to='/shop/game'>
-            <strong>Games</strong>- See All
+            <h4>
+              <strong>Games</strong>- See All
+            </h4>
           </Link>
           <Row>
             {products
