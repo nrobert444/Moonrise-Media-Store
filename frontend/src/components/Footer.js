@@ -13,29 +13,28 @@ const Footer = () => {
           <Navbar.Toggle aria-controls='basic-navbar-nav' />
           <Navbar.Collapse>
             <Row>
-              <Col className='text-left py-3'>
+              <Col className='text-left'>
                 Copyright &copy; Moonrise Media LLC
               </Col>
             </Row>
             <Nav className='ml-auto'>
+              <Nav.Link href='https://www.linkedin.com/in/nicholas-roberto/'>
+                <FontAwesomeIcon className='fab fa-2x' icon={faLinkedin} />
+              </Nav.Link>
               <LinkContainer to='/contact'>
                 <Nav.Link>
-                  <FontAwesomeIcon className='fab' icon={faLinkedin} />
+                  <FontAwesomeIcon className='fab fa-2x' icon={faTwitter} />
                 </Nav.Link>
               </LinkContainer>
               <LinkContainer to='/contact'>
                 <Nav.Link>
-                  <FontAwesomeIcon className='fab' icon={faTwitter} />
-                </Nav.Link>
-              </LinkContainer>
-              <LinkContainer to='/contact'>
-                <Nav.Link>
-                  <FontAwesomeIcon className='fab' icon={faPhone} /> Contact
+                  <FontAwesomeIcon className='fab fa-2x' icon={faPhone} />{' '}
+                  Contact
                 </Nav.Link>
               </LinkContainer>
               <LinkContainer to='/about'>
                 <Nav.Link>
-                  <FontAwesomeIcon className='fab' icon={faUser} /> About
+                  <FontAwesomeIcon className='fab fa-2x' icon={faUser} /> About
                 </Nav.Link>
               </LinkContainer>
             </Nav>
