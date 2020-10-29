@@ -1,7 +1,7 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import { Container, Row, Col } from 'react-bootstrap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faTwitter, faLinkedin } from '@fortawesome/free-brands-svg-icons'
 import {
   faPhone,
   faEnvelope,
@@ -11,6 +11,9 @@ import {
 const ContactPage = () => {
   return (
     <Container fluid>
+      <Link to='/' className='btn btn-light my-3 border'>
+        Go Back
+      </Link>
       <Row className='mb-5'>
         <h1 className='m-auto'>Contact Us!</h1>
       </Row>
