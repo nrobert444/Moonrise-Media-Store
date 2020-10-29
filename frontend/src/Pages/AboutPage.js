@@ -9,21 +9,29 @@ const AboutPage = () => {
         Go Back
       </Link>
 
-      <Row className='justify-content-md-center mb-5'>
+      <Row className='justify-content-md-left mb-5'>
         <Col md={4}>
           <Image src={logo} alt='moonrise logo' fluid rounded />
         </Col>
-      </Row>
-
-      <Row>
-        <Card>
-          <Card.Body>
-            <Card.Title as='h1'>
-              <strong>'Moonrise Media - Who We Are'</strong>
-            </Card.Title>
-            <Card.Text as='p'>'Description'</Card.Text>
-          </Card.Body>
-        </Card>
+        <Col md={8}>
+          <Card>
+            <Card.Body>
+              <Card.Title as='h1'>
+                <strong>Who We Are</strong>
+              </Card.Title>
+              <Card.Text as='p'>
+                Moonrise Media was born from a passion for film and two brothers
+                quest to find obscure and underseen works of cinematic art. In
+                our search we found that many of these rare items could only be
+                purchased at a premium and began developing lists of the rarest
+                and most interesting finds to seek out. These lists became the
+                foundation for what would become nearly a decade of traveling
+                the US finding these obscurities and using the proceeds of
+                selling to support both our passion for film and our lives.
+              </Card.Text>
+            </Card.Body>
+          </Card>
+        </Col>
       </Row>
     </>
   )
