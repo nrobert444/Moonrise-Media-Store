@@ -19,7 +19,7 @@ const AboutPage = () => {
               <Card.Title as='h1'>
                 <strong>Who We Are</strong>
               </Card.Title>
-              <Card.Text as='p'>
+              <Card.Text as='p' style={{ fontSize: '19px' }}>
                 Moonrise Media was born from a passion for film and two brothers
                 quest to find obscure and underseen works of cinematic art. In
                 our search we found that many of these rare items could only be
