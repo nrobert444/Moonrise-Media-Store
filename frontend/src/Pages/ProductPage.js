@@ -51,7 +51,7 @@ const ProductPage = ({ match, history }) => {
               </ListGroup>
             </Col>
             <Col md={3}>
-              <Card border='dark rounded' style={{ height: '20rem' }}>
+              <Card style={{ height: '20rem' }}>
                 <ListGroup variant='flush'>
                   <ListGroup.Item>
                     <Row>

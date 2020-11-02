@@ -32,9 +32,7 @@ const HomePage = ({ match }) => {
       ) : (
         <>
           <Link to='/shop/dvd'>
-            <h4>
-              <strong>DVDs</strong>- See All
-            </h4>
+            <h4>DVDs - See All</h4>
           </Link>
           <Row>
             {products
@@ -50,9 +48,7 @@ const HomePage = ({ match }) => {
               )}
           </Row>
           <Link to='/shop/bluray'>
-            <h4>
-              <strong>Blu-Rays</strong>- See All
-            </h4>
+            <h4>Blu-Rays - See All</h4>
           </Link>
           <Row>
             {products
@@ -68,9 +64,7 @@ const HomePage = ({ match }) => {
               )}
           </Row>
           <Link to='/shop/game'>
-            <h4>
-              <strong>Games</strong>- See All
-            </h4>
+            <h4>Games - See All</h4>
           </Link>
           <Row>
             {products

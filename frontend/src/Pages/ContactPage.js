@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { Container, Row, Col, Form } from 'react-bootstrap'
+import { Container, Row, Col, Form, Button } from 'react-bootstrap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
   faPhone,
@@ -50,11 +50,15 @@ const ContactPage = () => {
             <Form.Label>Message</Form.Label>
             <Form.Control
               type='text'
+              size='lg'
               placeholder='Enter message'
               value={message}
               onChange={e => setMessage(e.target.value)}
             ></Form.Control>
           </Form.Group>
+          <Button type='submit' variant='primary'>
+            Submit
+          </Button>
         </Form>
       </FormContainer>
       <Row>
@@ -65,7 +69,7 @@ const ContactPage = () => {
         </Col>
         <Col md={4}>
           <FontAwesomeIcon className='fa-2x' icon={faPhone} />
-          <h3>Phone Number</h3>
+          <h3>Phone</h3>
           <h6>(843)-209-7711</h6>
         </Col>
         <Col md={4}>
