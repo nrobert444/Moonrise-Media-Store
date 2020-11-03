@@ -23,7 +23,11 @@ import {
   USER_DELETE_FAIL,
   USER_UPDATE_FAIL,
   USER_UPDATE_SUCCESS,
-  USER_UPDATE_REQUEST
+  USER_UPDATE_REQUEST,
+  USER_CONTACT_RESET,
+  USER_CONTACT_FAIL,
+  USER_CONTACT_SUCCESS,
+  USER_CONTACT_REQUEST
 } from '../constants/userConstants'
 
 export const userLoginReducer = (state = {}, action) => {
@@ -135,3 +139,4 @@ export const userContactReducer = (state = {}, action) => {
     default:
       return state
   }
+}
