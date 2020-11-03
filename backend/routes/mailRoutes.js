@@ -1,13 +1,13 @@
 import express from 'express'
 const router = express.Router()
 import nodemailer from 'nodemailer'
-
+import { creds } from '../config/mail.js'
 const transport = {
   host: 'smtp.gmail.com',
   port: 587,
   auth: {
-    user: process.env.SMTP_EMAIL,
-    pass: process.env.SMTP_PASS
+    user: creds.USER,
+    pass: creds.PASS
   }
 }
 
