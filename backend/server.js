@@ -3,7 +3,6 @@ import path from 'path'
 import connectDb from './config/db.js'
 import colors from 'colors'
 import morgan from 'morgan'
-import cors from 'cors'
 import nodemailer from 'nodemailer'
 import productRoutes from './routes/productRoutes.js'
 import userRoutes from './routes/userRoutes.js'
@@ -11,7 +10,6 @@ import orderRoutes from './routes/orderRoutes.js'
 import uploadRoutes from './routes/uploadRoutes.js'
 import mailRoutes from './routes/mailRoutes.js'
 import dotenv from 'dotenv'
-import creds from './config/mail.js'
 import { errorHandler, notFound } from './middleware/errorMiddleware.js'
 
 dotenv.config()
@@ -20,7 +18,6 @@ const app = express()
 connectDb()
 
 app.use(express.json())
-app.use(cors())
 
 if (process.env.NODE_ENV === 'development') {
   app.use(morgan('dev'))
@@ -36,8 +33,8 @@ var transport = {
   host: 'smtp.gmail.com',
   port: 587,
   auth: {
-    user: creds.USER,
-    pass: creds.PASS
+    user: process.env.SMTP_EMAIL,
+    pass: process.env.SMTP_PASS
   }
 }
 
