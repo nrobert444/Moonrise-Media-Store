@@ -1,14 +1,15 @@
 import express from 'express'
 const router = express.Router()
 import nodemailer from 'nodemailer'
+import creds from '../config/mail.js'
 
 const transport = {
   host: 'smtp.gmail.com',
   service: 'gmail',
   port: 587,
   auth: {
-    user: 'njr444@gmail.com',
-    pass: '7SamuraIFINora'
+    user: creds.USER,
+    pass: creds.PASS
   },
   tls: {
     rejectUnauthorized: false
@@ -32,7 +33,7 @@ router.post('/', (req, res) => {
 
   const mail = {
     from: name,
-    to: 'njrna444@yahoo.com',
+    to: 'moonrisestore44@gmail.com',
     subject: 'New Message from Contact Form',
     text: content
   }

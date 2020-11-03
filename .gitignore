@@ -3,6 +3,7 @@
 # dependencies
 /node_modules
 node_modules/
+/backend/config/mail.js
 /.pnp
 .pnp.js
 
