@@ -9,6 +9,7 @@ import orderRoutes from './routes/orderRoutes.js'
 import uploadRoutes from './routes/uploadRoutes.js'
 import mailRoutes from './routes/mailRoutes.js'
 import dotenv from 'dotenv'
+import cors from 'cors'
 import { errorHandler, notFound } from './middleware/errorMiddleware.js'
 
 dotenv.config()
@@ -17,6 +18,7 @@ const app = express()
 connectDb()
 
 app.use(express.json())
+app.use(cors())
 
 if (process.env.NODE_ENV === 'development') {
   app.use(morgan('dev'))

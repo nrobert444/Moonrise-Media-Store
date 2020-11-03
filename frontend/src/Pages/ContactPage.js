@@ -27,6 +27,9 @@ const ContactPage = () => {
   useEffect(() => {
     if (success) {
       dispatch({ type: USER_CONTACT_RESET })
+      setName('')
+      setMessage('')
+      setEmail('')
     }
   }, [success, dispatch])
 
