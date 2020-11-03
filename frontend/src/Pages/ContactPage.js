@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
+import axios from 'axios'
 import { Container, Row, Col, Form, Button } from 'react-bootstrap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
@@ -14,8 +15,11 @@ const ContactPage = () => {
   const [email, setEmail] = useState('')
   const [message, setMessage] = useState('')
 
-  const submitHandler = e => {
+  const submitHandler = async(e) => {
     e.preventDefault()
+    await axios.post()
+
+
   }
 
   return (
