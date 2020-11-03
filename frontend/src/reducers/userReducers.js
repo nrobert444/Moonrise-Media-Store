@@ -122,3 +122,16 @@ export const userUpdateReducer = (state = { user: {} }, action) => {
       return state
   }
 }
+export const userContactReducer = (state = {}, action) => {
+  switch (action.type) {
+    case USER_CONTACT_REQUEST:
+      return { loading: true }
+    case USER_CONTACT_SUCCESS:
+      return { loading: false, success: true, userInfo: action.payload }
+    case USER_CONTACT_FAIL:
+      return { loading: false, error: action.payload }
+    case USER_CONTACT_RESET:
+      return {}
+    default:
+      return state
+  }

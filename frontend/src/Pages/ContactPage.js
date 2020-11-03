@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { useSelector, useDispatch } from 'react-redux'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
 import { Container, Row, Col, Form, Button } from 'react-bootstrap'
@@ -9,17 +10,21 @@ import {
   faAddressCard
 } from '@fortawesome/free-solid-svg-icons'
 import FormContainer from '../components/FormContainer'
+import { USER_CONTACT_SUCCESS } from '../constants/userConstants'
 
 const ContactPage = () => {
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [message, setMessage] = useState('')
 
-  const submitHandler = async(e) => {
+  const dispatch = useDispatch()
+
+  const userContact = useSelector(state => state.userContact)
+  const { loading, error, success } = userContact
+
+  const submitHandler = async e => {
     e.preventDefault()
-    await axios.post()
-
-
+    dispatch({ type: USER_CONTACT_SUCCESS})
   }
 
   return (

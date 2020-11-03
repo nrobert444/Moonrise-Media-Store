@@ -1,7 +1,7 @@
 import express from 'express'
 const router = express.Router()
 
-router.post('/send', (req, res, next) => {
+router.post('/', (req, res) => {
   var name = req.body.name
   var email = req.body.email
   var message = req.body.message
