@@ -1,7 +1,6 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { Link } from 'react-router-dom'
-import axios from 'axios'
 import { Container, Row, Col, Form, Button } from 'react-bootstrap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
@@ -10,7 +9,10 @@ import {
   faAddressCard
 } from '@fortawesome/free-solid-svg-icons'
 import FormContainer from '../components/FormContainer'
-import { USER_CONTACT_SUCCESS } from '../constants/userConstants'
+import Message from '../components/Message'
+import Loader from '../components/Loader'
+import { contactUser } from '../actions/userActions'
+import { USER_CONTACT_RESET } from '../constants/userConstants'
 
 const ContactPage = () => {
   const [name, setName] = useState('')
@@ -22,9 +24,15 @@ const ContactPage = () => {
   const userContact = useSelector(state => state.userContact)
   const { loading, error, success } = userContact
 
+  useEffect(() => {
+    if (success) {
+      dispatch({ type: USER_CONTACT_RESET })
+    }
+  }, [success, dispatch])
+
   const submitHandler = async e => {
     e.preventDefault()
-    dispatch({ type: USER_CONTACT_SUCCESS})
+    dispatch(contactUser(name, email, message))
   }
 
   return (
@@ -35,6 +43,8 @@ const ContactPage = () => {
       <Row className='mb-5'>
         <h1 className='m-auto'>Contact Us!</h1>
       </Row>
+      {error && <Message variant='danger'>{error}</Message>}
+      {loading && <Loader />}
       <FormContainer>
         <Form onSubmit={submitHandler} className='mb-5'>
           <Form.Group controlId='name'>

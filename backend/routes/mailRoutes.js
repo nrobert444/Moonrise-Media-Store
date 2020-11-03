@@ -1,13 +1,32 @@
 import express from 'express'
 const router = express.Router()
+import nodemailer from 'nodemailer'
 
+const transport = {
+  host: 'smtp.gmail.com',
+  port: 587,
+  auth: {
+    user: process.env.SMTP_EMAIL,
+    pass: process.env.SMTP_PASS
+  }
+}
+
+const transporter = nodemailer.createTransport(transport)
+
+transporter.verify((error, success) => {
+  if (error) {
+    console.log(error)
+  } else {
+    console.log('Server is ready to take messages')
+  }
+})
 router.post('/', (req, res) => {
-  var name = req.body.name
-  var email = req.body.email
-  var message = req.body.message
-  var content = `name: ${name} \n email: ${email} \n message: ${message} `
+  const name = req.body.name
+  const email = req.body.email
+  const message = req.body.message
+  const content = `name: ${name} \n email: ${email} \n message: ${message} `
 
-  var mail = {
+  const mail = {
     from: name,
     to: 'njr444@gmail.com',
     subject: 'New Message from Contact Form',

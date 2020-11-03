@@ -3,7 +3,6 @@ import path from 'path'
 import connectDb from './config/db.js'
 import colors from 'colors'
 import morgan from 'morgan'
-import nodemailer from 'nodemailer'
 import productRoutes from './routes/productRoutes.js'
 import userRoutes from './routes/userRoutes.js'
 import orderRoutes from './routes/orderRoutes.js'
@@ -27,26 +26,7 @@ app.use('/api/products', productRoutes)
 app.use('/api/users', userRoutes)
 app.use('/api/orders', orderRoutes)
 app.use('/api/upload', uploadRoutes)
-app.use('api/send', mailRoutes)
-
-var transport = {
-  host: 'smtp.gmail.com',
-  port: 587,
-  auth: {
-    user: process.env.SMTP_EMAIL,
-    pass: process.env.SMTP_PASS
-  }
-}
-
-var transporter = nodemailer.createTransport(transport)
-
-transporter.verify((error, success) => {
-  if (error) {
-    console.log(error)
-  } else {
-    console.log('Server is ready to take messages')
-  }
-})
+app.use('/api/send', mailRoutes)
 
 app.get('/api/config/paypal', (req, res) =>
   res.send(process.env.PAYPAL_CLIENT_ID)
