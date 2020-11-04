@@ -63,13 +63,13 @@ const Header = () => {
                 </NavDropdown>
               )}
               <NavDropdown title='Shop' id='shopmenu'>
-                <LinkContainer to='/shop/dvd/page/1'>
+                <LinkContainer to='/shop/dvd'>
                   <NavDropdown.Item>DVD</NavDropdown.Item>
                 </LinkContainer>
-                <LinkContainer to='/shop/bluray/page/1'>
+                <LinkContainer to='/shop/bluray'>
                   <NavDropdown.Item>Blu-Ray</NavDropdown.Item>
                 </LinkContainer>
-                <LinkContainer to='/shop/games/page/1'>
+                <LinkContainer to='/shop/games'>
                   <NavDropdown.Item>Games</NavDropdown.Item>
                 </LinkContainer>
               </NavDropdown>

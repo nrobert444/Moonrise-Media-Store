@@ -43,7 +43,7 @@ const DvdPage = ({ match }) => {
           </Row>
         </>
       )}
-      <DvdPaginate pages={pages} page={page} keyword={keyword ? keyword : ''} />
+      <DvdPaginate pages={pages} page={page} />
     </>
   )
 }

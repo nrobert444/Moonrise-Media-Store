@@ -6,7 +6,7 @@ import { Row, Col } from 'react-bootstrap'
 import { listProducts } from '../actions/productActions'
 import Loader from '../components/Loader'
 import Message from '../components/Message'
-import Paginate from '../components/Paginate'
+// import Paginate from '../components/Paginate'
 import Meta from '../components/Meta'
 
 const HomePage = ({ match }) => {
@@ -16,7 +16,7 @@ const HomePage = ({ match }) => {
   const dispatch = useDispatch()
 
   const productList = useSelector(state => state.productList)
-  const { loading, error, products, page, pages } = productList
+  const { loading, error, products } = productList
 
   useEffect(() => {
     dispatch(listProducts(keyword, pageNumber))
@@ -31,7 +31,7 @@ const HomePage = ({ match }) => {
         <Message variant='danger'>{error}</Message>
       ) : (
         <>
-          <Link to='/shop/dvd/page/1'>
+          <Link to='/shop/dvd'>
             <h4>DVDs - See All</h4>
           </Link>
           <Row>
@@ -47,7 +47,7 @@ const HomePage = ({ match }) => {
                 )
               )}
           </Row>
-          <Link to='/shop/bluray/page/1'>
+          <Link to='/shop/bluray'>
             <h4>Blu-Rays - See All</h4>
           </Link>
           <Row>
@@ -63,7 +63,7 @@ const HomePage = ({ match }) => {
                 )
               )}
           </Row>
-          <Link to='/shop/game/page/1'>
+          <Link to='/shop/game'>
             <h4>Games - See All</h4>
           </Link>
           <Row>
@@ -81,7 +81,7 @@ const HomePage = ({ match }) => {
           </Row>
         </>
       )}
-      <Paginate pages={pages} page={page} keyword={keyword ? keyword : ''} />
+      {/* <Paginate pages={pages} page={page} keyword={keyword ? keyword : ''} /> */}
     </>
   )
 }

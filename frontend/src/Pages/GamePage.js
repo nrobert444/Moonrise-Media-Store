@@ -43,11 +43,7 @@ const GamePage = ({ match }) => {
           </Row>
         </>
       )}
-      <GamePaginate
-        pages={pages}
-        page={page}
-        keyword={keyword ? keyword : ''}
-      />
+      <GamePaginate pages={pages} page={page} />
     </>
   )
 }
