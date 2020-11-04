@@ -38,7 +38,11 @@ const BlurayPage = ({ match }) => {
           </Row>
         </>
       )}
-      <BluRayPaginate pages={pages} page={page} />
+      <BluRayPaginate
+        pages={pages}
+        page={page}
+        keyword={keyword ? keyword : ''}
+      />
     </>
   )
 }
