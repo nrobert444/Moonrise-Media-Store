@@ -1,16 +1,24 @@
-import React from 'react'
-import { useSelector } from 'react-redux'
+import React, { useEffect } from 'react'
+import { useSelector, useDispatch } from 'react-redux'
 import { Row, Col } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import Product from '../components/Product'
 import Loader from '../components/Loader'
 import Message from '../components/Message'
 import BluRayPaginate from '../components/BluRayPaginate'
+import { listProducts } from '../actions/productActions'
 
-const BlurayPage = () => {
+const BlurayPage = ({ match }) => {
+  const pageNumber = match.params.pageNumber || 1
+  const keyword = match.params.keyword
+  const dispatch = useDispatch()
 
   const productList = useSelector(state => state.productList)
   const { loading, error, products, page, pages } = productList
+
+  useEffect(() => {
+    dispatch(listProducts(keyword, pageNumber))
+  }, [dispatch, keyword, pageNumber])
 
   return (
     <>
