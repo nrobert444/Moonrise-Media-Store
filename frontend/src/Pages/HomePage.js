@@ -31,7 +31,7 @@ const HomePage = ({ match }) => {
         <Message variant='danger'>{error}</Message>
       ) : (
         <>
-          <Link to='/shop/dvd'>
+          <Link to='/shop/dvd/page/1'>
             <h4>DVDs - See All</h4>
           </Link>
           <Row>
@@ -47,9 +47,9 @@ const HomePage = ({ match }) => {
                 )
               )}
           </Row>
-          <Link to='/shop/bluray'>
+          <Link to='/shop/bluray/page/1'>
             <h4>Blu-Rays - See All</h4>
-          </Link>          
+          </Link>
           <Row>
             {products
               .filter(product => product.category === 'Blu-Ray')
@@ -59,11 +59,11 @@ const HomePage = ({ match }) => {
                     <Product product={product} />
                   </Col>
                 ) : (
-                ''
+                  ''
                 )
               )}
           </Row>
-          <Link to='/shop/game'>
+          <Link to='/shop/game/page/1'>
             <h4>Games - See All</h4>
           </Link>
           <Row>

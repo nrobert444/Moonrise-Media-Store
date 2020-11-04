@@ -38,9 +38,17 @@ const App = () => {
           <Route path='/register' component={RegisterPage} />
           <Route path='/profile' component={ProfilePage} />
           <Route path='/product/:id' component={ProductPage} />
-          <Route path='/shop/dvd/' component={DvdPage} />
-          <Route path='/shop/bluray/' component={BlurayPage} />
-          <Route path='/shop/games/' component={GamePage} />
+          <Route path='/shop/dvd/page/:pageNumber' component={DvdPage} exact />
+          <Route
+            path='/shop/bluray/page/:pageNumber'
+            component={BlurayPage}
+            exact
+          />
+          <Route
+            path='/shop/games/page/:pageNumber'
+            component={GamePage}
+            exact
+          />
           <Route path='/cart/:id?' component={CartPage} />
           <Route path='/admin/userlist' component={UserListPage} />
           <Route path='/admin/user/:id/edit' component={UserEditPage} />

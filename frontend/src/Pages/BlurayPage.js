@@ -4,7 +4,7 @@ import { Row, Col } from 'react-bootstrap'
 import Product from '../components/Product'
 import Loader from '../components/Loader'
 import Message from '../components/Message'
-// import Paginate from '../components/Paginate'
+import BluRayPaginate from '../components/BluRayPaginate'
 import { listProducts } from '../actions/productActions'
 
 const BlurayPage = ({ match }) => {
@@ -38,7 +38,7 @@ const BlurayPage = ({ match }) => {
           </Row>
         </>
       )}
-      {/* <Paginate pages={pages} page={page} keyword={keyword ? keyword : ''} /> */}
+      <BluRayPaginate pages={pages} page={page} />
     </>
   )
 }
