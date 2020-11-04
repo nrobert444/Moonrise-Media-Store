@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Row, Col } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
+
 import Product from '../components/Product'
 import Loader from '../components/Loader'
 import Message from '../components/Message'
@@ -20,6 +22,9 @@ const DvdPage = ({ match }) => {
   }, [dispatch, keyword, pageNumber])
   return (
     <>
+      <Link to='/' className='btn btn-light'>
+        Go Back
+      </Link>
       {loading ? (
         <Loader />
       ) : error ? (
