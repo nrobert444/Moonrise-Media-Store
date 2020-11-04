@@ -29,7 +29,7 @@ const DvdPage = ({ match }) => {
           <h1>DVDs</h1>
           <Row>
             {products
-              .filter(product => product.category === 'dvd')
+              .filter(product => product.category === 'DVD')
               .map(product => (
                 <Col sm={12} md={6} lg={4} xl={3} key={product._id}>
                   <Product product={product} />

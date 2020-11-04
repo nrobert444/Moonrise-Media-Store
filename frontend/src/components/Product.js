@@ -16,7 +16,7 @@ const Product = ({ product }) => {
               <strong>{name}</strong>
             </Card.Title>
           </Link>
-          <Card.Text as='h6'>{condition}</Card.Text>
+          <Card.Text as='h6'>{condition.toUpperCase()}</Card.Text>
           <Card.Text as='h3'>${price}</Card.Text>
         </Card.Body>
       </Card>

@@ -36,9 +36,9 @@ const HomePage = ({ match }) => {
           </Link>
           <Row>
             {products
-              .filter(product => product.category === 'dvd')
+              .filter(product => product.category === 'DVD')
               .map((product, idx) =>
-                idx < 3 ? (
+                idx < 4 ? (
                   <Col sm={12} md={6} lg={4} xl={3} key={product._id}>
                     <Product product={product} />
                   </Col>
@@ -49,17 +49,17 @@ const HomePage = ({ match }) => {
           </Row>
           <Link to='/shop/bluray'>
             <h4>Blu-Rays - See All</h4>
-          </Link>
+          </Link>          
           <Row>
             {products
-              .filter(product => product.category === 'bluray')
+              .filter(product => product.category === 'Blu-Ray')
               .map((product, idx) =>
-                idx < 3 ? (
+                idx < 4 ? (
                   <Col sm={12} md={6} lg={4} xl={3} key={product._id}>
                     <Product product={product} />
                   </Col>
                 ) : (
-                  ''
+                ''
                 )
               )}
           </Row>
@@ -68,9 +68,9 @@ const HomePage = ({ match }) => {
           </Link>
           <Row>
             {products
-              .filter(product => product.category === 'game')
+              .filter(product => product.category === 'GAME')
               .map((product, idx) =>
-                idx < 3 ? (
+                idx < 4 ? (
                   <Col sm={12} md={6} lg={4} xl={3} key={product._id}>
                     <Product product={product} />
                   </Col>
