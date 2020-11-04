@@ -18,12 +18,6 @@ const Footer = () => {
               </Col>
             </Row>
             <Nav className='ml-auto'>
-              <Nav.Link href='https://www.linkedin.com/in/nicholas-roberto/'>
-                <FontAwesomeIcon className='fab fa-2x' icon={faLinkedin} />
-              </Nav.Link>
-              <Nav.Link href='https://twitter.com/Nichola55137683'>
-                <FontAwesomeIcon className='fab fa-2x' icon={faTwitter} />
-              </Nav.Link>
               <LinkContainer to='/contact'>
                 <Nav.Link>
                   <FontAwesomeIcon className='fab fa-2x' icon={faPhone} />{' '}
@@ -35,6 +29,12 @@ const Footer = () => {
                   <FontAwesomeIcon className='fab fa-2x' icon={faUser} /> About
                 </Nav.Link>
               </LinkContainer>
+              <Nav.Link href='https://www.linkedin.com/in/nicholas-roberto/'>
+                <FontAwesomeIcon className='fab fa-2x' icon={faLinkedin} />
+              </Nav.Link>
+              <Nav.Link href='https://twitter.com/Nichola55137683'>
+                <FontAwesomeIcon className='fab fa-2x' icon={faTwitter} />
+              </Nav.Link>
             </Nav>
           </Navbar.Collapse>
         </Container>
