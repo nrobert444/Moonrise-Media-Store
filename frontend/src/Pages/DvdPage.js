@@ -10,7 +10,8 @@ import DvdPaginate from '../components/DvdPaginate'
 import { listProducts } from '../actions/productActions'
 
 const DvdPage = ({ match }) => {
-  const keyword = match.params.keyword
+  const keyword = 'DVD'
+
   const pageNumber = match.params.pageNumber || 1
   const dispatch = useDispatch()
 
@@ -18,8 +19,8 @@ const DvdPage = ({ match }) => {
   const { loading, error, products, page, pages } = productList
 
   useEffect(() => {
-    dispatch(listProducts(keyword, pageNumber))
-  }, [dispatch, keyword, pageNumber])
+    dispatch(listProducts('', pageNumber))
+  }, [dispatch, pageNumber])
   return (
     <>
       <Link to='/' className='btn btn-light'>
@@ -43,7 +44,7 @@ const DvdPage = ({ match }) => {
           </Row>
         </>
       )}
-      <DvdPaginate pages={pages} page={page} />
+      <DvdPaginate pages={pages} page={page} keyword={keyword} />
     </>
   )
 }

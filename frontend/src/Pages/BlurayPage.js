@@ -10,15 +10,14 @@ import { listProducts } from '../actions/productActions'
 
 const BlurayPage = ({ match }) => {
   const pageNumber = match.params.pageNumber || 1
-  const keyword = match.params.keyword
   const dispatch = useDispatch()
 
   const productList = useSelector(state => state.productList)
   const { loading, error, products, page, pages } = productList
 
   useEffect(() => {
-    dispatch(listProducts(keyword, pageNumber))
-  }, [dispatch, keyword, pageNumber])
+    dispatch(listProducts('', pageNumber))
+  }, [dispatch, pageNumber])
 
   return (
     <>

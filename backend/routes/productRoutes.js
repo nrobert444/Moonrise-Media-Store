@@ -2,15 +2,21 @@ import express from 'express'
 import {
   getProducts,
   getProductById,
+  getProductsCategoryDvd,
+  getProductsCategoryBluray,
+  getProductsCategoryGames,
   deleteProductById,
   createProduct,
-  updateProduct,
+  updateProduct
 } from '../controllers/productController.js'
 import { isAdmin, protect } from '../middleware/authMiddleware.js'
 
 const router = express.Router()
 
 router.route('/').get(getProducts).post(protect, isAdmin, createProduct)
+router.route('/dvd').get(getProductsCategoryDvd)
+router.route('/bluray').get(getProductsCategoryBluray)
+router.route('/games').get(getProductsCategoryGames)
 router
   .route('/:id')
   .get(getProductById)

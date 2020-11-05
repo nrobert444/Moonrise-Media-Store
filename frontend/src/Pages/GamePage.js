@@ -9,7 +9,8 @@ import GamePaginate from '../components/GamePaginate'
 import { listProducts } from '../actions/productActions'
 
 const GamePage = ({ match }) => {
-  const keyword = match.params.keyword
+  const keyword = 'GAME'
+
   const pageNumber = match.params.pageNumber || 1
   const dispatch = useDispatch()
 
@@ -17,8 +18,8 @@ const GamePage = ({ match }) => {
   const { loading, error, products, page, pages } = productList
 
   useEffect(() => {
-    dispatch(listProducts(keyword, pageNumber))
-  }, [dispatch, keyword, pageNumber])
+    dispatch(listProducts('', pageNumber))
+  }, [dispatch, pageNumber])
   return (
     <>
       <Link to='/' className='btn btn-light'>
@@ -42,7 +43,7 @@ const GamePage = ({ match }) => {
           </Row>
         </>
       )}
-      <GamePaginate pages={pages} page={page} />
+      <GamePaginate pages={pages} page={page} keyword={keyword} />
     </>
   )
 }

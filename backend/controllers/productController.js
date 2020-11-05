@@ -22,6 +22,46 @@ const getProducts = asyncHandler(async (req, res) => {
   res.json({ products, page, pages: Math.ceil(count / pageSize) })
 })
 
+//@desc Fetch all product routes by category DVD
+//@route GET /api/products/dvd
+//@access public
+const getProductsCategoryDvd = asyncHandler(async (req, res) => {
+  const pageSize = 10
+  const page = Number(req.query.pageNumber) || 1
+
+  const count = await Product.countDocuments({ category: /DVD/ })
+  const products = await Product.find({ category: /DVD/ })
+    .limit(pageSize)
+    .skip(pageSize * (page - 1))
+  res.json({ products, page, pages: Math.ceil(count / pageSize) })
+})
+//@desc Fetch all product routes by category Bluray
+//@route GET /api/products/bluray
+//@access public
+const getProductsCategoryBluray = asyncHandler(async (req, res) => {
+  const pageSize = 10
+  const page = Number(req.query.pageNumber) || 1
+
+  const count = await Product.countDocuments({ category: /Blu-Ray/ })
+  const products = await Product.find({ category: /Blu-Ray/ })
+    .limit(pageSize)
+    .skip(pageSize * (page - 1))
+  res.json({ products, page, pages: Math.ceil(count / pageSize) })
+})
+//@desc Fetch all product routes by category Games
+//@route GET /api/products/dvd
+//@access public
+const getProductsCategoryGames = asyncHandler(async (req, res) => {
+  const pageSize = 10
+  const page = Number(req.query.pageNumber) || 1
+
+  const count = await Product.countDocuments({ category: /GAME/ })
+  const products = await Product.find({ category: /GAME/ })
+    .limit(pageSize)
+    .skip(pageSize * (page - 1))
+  res.json({ products, page, pages: Math.ceil(count / pageSize) })
+})
+
 //@desc Fetch product Route matching ID
 //@route GET /api/products/:id
 //@access public
@@ -107,6 +147,9 @@ const updateProduct = asyncHandler(async (req, res) => {
 export {
   getProducts,
   getProductById,
+  getProductsCategoryDvd,
+  getProductsCategoryBluray,
+  getProductsCategoryGames,
   deleteProductById,
   createProduct,
   updateProduct

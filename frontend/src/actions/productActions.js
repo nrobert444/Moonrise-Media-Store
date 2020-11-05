@@ -13,8 +13,7 @@ import {
   PRODUCT_CREATE_FAIL,
   PRODUCT_UPDATE_FAIL,
   PRODUCT_UPDATE_REQUEST,
-  PRODUCT_UPDATE_SUCCESS,
- 
+  PRODUCT_UPDATE_SUCCESS
 } from '../constants/productContstants'
 import axios from 'axios'
 
@@ -145,4 +144,3 @@ export const updateProduct = product => async (dispatch, getState) => {
     })
   }
 }
-

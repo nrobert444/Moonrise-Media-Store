@@ -63,7 +63,7 @@ const HomePage = ({ match }) => {
                 )
               )}
           </Row>
-          <Link to='/shop/game'>
+          <Link to='/shop/games'>
             <h4>Games - See All</h4>
           </Link>
           <Row>
