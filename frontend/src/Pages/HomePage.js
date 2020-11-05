@@ -6,9 +6,8 @@ import { Row, Col } from 'react-bootstrap'
 import { listProducts } from '../actions/productActions'
 import Loader from '../components/Loader'
 import Message from '../components/Message'
-import Paginate from '../components/Paginate'
+// import Paginate from '../components/Paginate'
 import Meta from '../components/Meta'
-// import ProductCarousel from '../components/ProductCarousel'
 
 const HomePage = ({ match }) => {
   const keyword = match.params.keyword
@@ -32,36 +31,57 @@ const HomePage = ({ match }) => {
         <Message variant='danger'>{error}</Message>
       ) : (
         <>
+          <Link to='/shop/dvd'>
+            <h4>DVDs - See All</h4>
+          </Link>
           <Row>
             {products
-              .filter(product => product.category === 'bluray')
-              .map(product => (
-                <Col sm={12} md={6} lg={4} xl={3} key={product._id}>
-                  <Product product={product} />
-                </Col>
-              ))}
+              .filter(product => product.category === 'DVD')
+              .map((product, idx) =>
+                idx < 4 ? (
+                  <Col sm={12} md={6} lg={4} xl={3} key={product._id}>
+                    <Product product={product} />
+                  </Col>
+                ) : (
+                  ''
+                )
+              )}
           </Row>
+          <Link to='/shop/bluray'>
+            <h4>Blu-Rays - See All</h4>
+          </Link>
           <Row>
             {products
-              .filter(product => product.category === 'game')
-              .map(product => (
-                <Col sm={12} md={6} lg={4} xl={3} key={product._id}>
-                  <Product product={product} />
-                </Col>
-              ))}
+              .filter(product => product.category === 'Blu-Ray')
+              .map((product, idx) =>
+                idx < 4 ? (
+                  <Col sm={12} md={6} lg={4} xl={3} key={product._id}>
+                    <Product product={product} />
+                  </Col>
+                ) : (
+                  ''
+                )
+              )}
           </Row>
+          <Link to='/shop/games'>
+            <h4>Games - See All</h4>
+          </Link>
           <Row>
             {products
-              .filter(product => product.category === 'dvd')
-              .map(product => (
-                <Col sm={12} md={6} lg={4} xl={3} key={product._id}>
-                  <Product product={product} />
-                </Col>
-              ))}
+              .filter(product => product.category === 'GAME')
+              .map((product, idx) =>
+                idx < 4 ? (
+                  <Col sm={12} md={6} lg={4} xl={3} key={product._id}>
+                    <Product product={product} />
+                  </Col>
+                ) : (
+                  ''
+                )
+              )}
           </Row>
         </>
       )}
-      <Paginate pages={pages} page={page} keyword={keyword ? keyword : ''} />
+      {/* <Paginate pages={pages} page={page} keyword={keyword ? keyword : ''} /> */}
     </>
   )
 }

@@ -95,6 +95,7 @@ const ProductListPage = ({ history, match }) => {
                 <th>NAME</th>
                 <th>PRICE</th>
                 <th>CATEGORY</th>
+                <th>CONDITION</th>
                 <th>UPC</th>
               </tr>
             </thead>
@@ -105,6 +106,7 @@ const ProductListPage = ({ history, match }) => {
                   <td>{product.name}</td>
                   <td>${product.price}</td>
                   <td>{product.category}</td>
+                  <td>{product.condition}</td>
                   <td>{product.upc}</td>
                   <td>
                     <LinkContainer to={`/admin/product/${product._id}/edit`}>

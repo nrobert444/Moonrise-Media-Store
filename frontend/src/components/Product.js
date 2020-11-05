@@ -3,22 +3,22 @@ import { Card } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 
 const Product = ({ product }) => {
-  const { _id, name, image, price } = product
+  const { _id, name, image, price, condition } = product
   return (
     <>
-      <Card className='my-3 p-3 rounded'>
-        <Link to={`/product/${_id}`}>
-          <Card.Img src={image} variant='top' />
-        </Link>
-        <Card.Body>
-          <Link to={`/product/${_id}`}>
+      <Link to={`/product/${_id}`}>
+        <Card className='my-3 p-3 rounded'>
+          <Card.Img src={image} variant='top' style={{ height: '18rem' }} />
+
+          <Card.Body>
             <Card.Title as='div'>
               <strong>{name}</strong>
             </Card.Title>
-          </Link>
-          <Card.Text as='h3'>${price}</Card.Text>
-        </Card.Body>
-      </Card>
+            <Card.Text as='h6'>{condition.toUpperCase()}</Card.Text>
+            <Card.Text as='h3'>${price}</Card.Text>
+          </Card.Body>
+        </Card>
+      </Link>
     </>
   )
 }

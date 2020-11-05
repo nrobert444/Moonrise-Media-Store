@@ -1,25 +1,29 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Row, Col } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
+
 import Product from '../components/Product'
 import Loader from '../components/Loader'
 import Message from '../components/Message'
-import Paginate from '../components/Paginate'
-import { listProducts } from '../actions/productActions'
+import DvdPaginate from '../components/DvdPaginate'
+import { listProductsDvd } from '../actions/productActions'
 
 const DvdPage = ({ match }) => {
-  const keyword = match.params.keyword
   const pageNumber = match.params.pageNumber || 1
   const dispatch = useDispatch()
 
-  const productList = useSelector(state => state.productList)
-  const { loading, error, products, page, pages } = productList
+  const productListDvd = useSelector(state => state.productListDvd)
+  const { loading, error, products, page, pages } = productListDvd
 
   useEffect(() => {
-    dispatch(listProducts(keyword, pageNumber))
-  }, [dispatch, keyword, pageNumber])
+    dispatch(listProductsDvd(pageNumber))
+  }, [dispatch, pageNumber])
   return (
     <>
+      <Link to='/' className='btn btn-light'>
+        Go Back
+      </Link>
       {loading ? (
         <Loader />
       ) : error ? (
@@ -29,7 +33,7 @@ const DvdPage = ({ match }) => {
           <h1>DVDs</h1>
           <Row>
             {products
-              .filter(product => product.category === 'dvd')
+              .filter(product => product.category === 'DVD')
               .map(product => (
                 <Col sm={12} md={6} lg={4} xl={3} key={product._id}>
                   <Product product={product} />
@@ -38,7 +42,7 @@ const DvdPage = ({ match }) => {
           </Row>
         </>
       )}
-      <Paginate pages={pages} page={page} keyword={keyword ? keyword : ''} />
+      <DvdPaginate pages={pages} page={page} />
     </>
   )
 }

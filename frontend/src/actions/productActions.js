@@ -14,7 +14,15 @@ import {
   PRODUCT_UPDATE_FAIL,
   PRODUCT_UPDATE_REQUEST,
   PRODUCT_UPDATE_SUCCESS,
- 
+  PRODUCT_LIST_DVD_REQUEST,
+  PRODUCT_LIST_DVD_SUCCESS,
+  PRODUCT_LIST_DVD_FAIL,
+  PRODUCT_LIST_BLURAY_REQUEST,
+  PRODUCT_LIST_BLURAY_SUCCESS,
+  PRODUCT_LIST_BLURAY_FAIL,
+  PRODUCT_LIST_GAMES_REQUEST,
+  PRODUCT_LIST_GAMES_SUCCESS,
+  PRODUCT_LIST_GAMES_FAIL
 } from '../constants/productContstants'
 import axios from 'axios'
 
@@ -32,6 +40,60 @@ export const listProducts = (
   } catch (error) {
     dispatch({
       type: PRODUCT_LIST_FAIL,
+      payload:
+        error.response && error.response.data.message
+          ? error.response.data.message
+          : error.message
+    })
+  }
+}
+export const listProductsDvd = (pageNumber = '') => async dispatch => {
+  try {
+    dispatch({ type: PRODUCT_LIST_DVD_REQUEST })
+    const { data } = await axios.get(
+      `/api/products/dvd?pageNumber=${pageNumber}`
+    )
+
+    dispatch({ type: PRODUCT_LIST_DVD_SUCCESS, payload: data })
+  } catch (error) {
+    dispatch({
+      type: PRODUCT_LIST_DVD_FAIL,
+      payload:
+        error.response && error.response.data.message
+          ? error.response.data.message
+          : error.message
+    })
+  }
+}
+export const listProductsBluray = (pageNumber = '') => async dispatch => {
+  try {
+    dispatch({ type: PRODUCT_LIST_BLURAY_REQUEST })
+    const { data } = await axios.get(
+      `/api/products/bluray?pageNumber=${pageNumber}`
+    )
+
+    dispatch({ type: PRODUCT_LIST_BLURAY_SUCCESS, payload: data })
+  } catch (error) {
+    dispatch({
+      type: PRODUCT_LIST_BLURAY_FAIL,
+      payload:
+        error.response && error.response.data.message
+          ? error.response.data.message
+          : error.message
+    })
+  }
+}
+export const listProductsGames = (pageNumber = '') => async dispatch => {
+  try {
+    dispatch({ type: PRODUCT_LIST_GAMES_REQUEST })
+    const { data } = await axios.get(
+      `/api/products/games?pageNumber=${pageNumber}`
+    )
+
+    dispatch({ type: PRODUCT_LIST_GAMES_SUCCESS, payload: data })
+  } catch (error) {
+    dispatch({
+      type: PRODUCT_LIST_GAMES_FAIL,
       payload:
         error.response && error.response.data.message
           ? error.response.data.message
@@ -145,4 +207,3 @@ export const updateProduct = product => async (dispatch, getState) => {
     })
   }
 }
-

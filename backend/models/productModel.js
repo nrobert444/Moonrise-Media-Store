@@ -1,6 +1,5 @@
 import mongoose from 'mongoose'
 
-
 const productSchema = mongoose.Schema(
   {
     user: {
@@ -13,6 +12,10 @@ const productSchema = mongoose.Schema(
       required: true
     },
     image: {
+      type: String,
+      required: true
+    },
+    condition: {
       type: String,
       required: true
     },

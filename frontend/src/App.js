@@ -2,6 +2,7 @@ import React from 'react'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 import { Container } from 'react-bootstrap'
 import Header from './components/Header'
+import AboutPage from './Pages/AboutPage'
 import Footer from './components/Footer'
 import HomePage from './Pages/HomePage'
 import ProductPage from './Pages/ProductPage'
@@ -21,12 +22,13 @@ import OrderListPage from './Pages/OrderListPage'
 import BlurayPage from './Pages/BlurayPage'
 import DvdPage from './Pages/DvdPage'
 import GamePage from './Pages/GamePage'
+import ContactPage from './Pages/ContactPage'
 
 const App = () => {
   return (
     <Router>
       <Header />
-      <main className='py-3'>
+      <main className='py-3' style={{ backgroundColor: '#ffffe6' }}>
         <Container>
           <Route path='/order/:id' component={OrderPage} />
           <Route path='/shipping' component={ShippingPage} />
@@ -36,9 +38,12 @@ const App = () => {
           <Route path='/register' component={RegisterPage} />
           <Route path='/profile' component={ProfilePage} />
           <Route path='/product/:id' component={ProductPage} />
-          <Route path='/shop/dvd' component={DvdPage} />
-          <Route path='/shop/bluray' component={BlurayPage} />
-          <Route path='/shop/games' component={GamePage} />
+          <Route path='/shop/games' component={GamePage} exact />
+          <Route path='/shop/dvd' component={DvdPage} exact />
+          <Route path='/shop/bluray' component={BlurayPage} exact />
+          <Route path='/shop/dvd/:pageNumber' component={DvdPage} exact />
+          <Route path='/shop/bluray/:pageNumber' component={BlurayPage} exact />
+          <Route path='/shop/games/:pageNumber' component={GamePage} exact />
           <Route path='/cart/:id?' component={CartPage} />
           <Route path='/admin/userlist' component={UserListPage} />
           <Route path='/admin/user/:id/edit' component={UserEditPage} />
@@ -57,6 +62,8 @@ const App = () => {
             component={HomePage}
             exact
           />
+          <Route path='/about' component={AboutPage} exact />
+          <Route path='/contact' component={ContactPage} exact />
           <Route path='/' component={HomePage} exact />
         </Container>
       </main>

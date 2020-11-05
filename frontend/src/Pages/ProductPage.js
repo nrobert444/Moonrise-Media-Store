@@ -25,7 +25,7 @@ const ProductPage = ({ match, history }) => {
 
   return (
     <>
-      <Link to='/' className='btn btn-light my-3'>
+      <Link to='/' className='btn btn-light my-3 border'>
         Go Back
       </Link>
       {loading ? (
@@ -36,29 +36,28 @@ const ProductPage = ({ match, history }) => {
         <>
           <Meta title={product.name} />
           <Row>
-            <Col md={6}>
+            <Col md={4}>
               <Image src={product.image} alt={product.name} fluid rounded />
             </Col>
-            <Col md={3}>
+            <Col md={5}>
               <ListGroup variant='flush'>
                 <ListGroup.Item>
                   <h3>{product.name}</h3>
                 </ListGroup.Item>
-                <ListGroup.Item>Price: {product.price}</ListGroup.Item>
-                <ListGroup.Item>
-                  Description: {product.description}
-                </ListGroup.Item>
+                <ListGroup.Item>Price: ${product.price}</ListGroup.Item>
                 <ListGroup.Item>UPC: {product.upc}</ListGroup.Item>
+                <ListGroup.Item>Category: {product.category}</ListGroup.Item>
+                <ListGroup.Item>Condition: {product.condition}</ListGroup.Item>
               </ListGroup>
             </Col>
             <Col md={3}>
-              <Card>
+              <Card style={{ height: '20rem' }}>
                 <ListGroup variant='flush'>
                   <ListGroup.Item>
                     <Row>
                       <Col>Price:</Col>
                       <Col>
-                        <strong>{product.price}</strong>
+                        <strong>${product.price}</strong>
                       </Col>
                     </Row>
                   </ListGroup.Item>
@@ -96,7 +95,7 @@ const ProductPage = ({ match, history }) => {
                   <ListGroup.Item>
                     <Button
                       onClick={addToCartHandler}
-                      className='btn-block'
+                      className='btn-block my-4'
                       type='button'
                       disabled={product.countInStock === 0}
                     >
@@ -106,6 +105,14 @@ const ProductPage = ({ match, history }) => {
                 </ListGroup>
               </Card>
             </Col>
+            <Row className='justify-content-md-center mt-3'>
+              <Col md={10}>
+                <ListGroup variant='flush'>
+                  <h2 className='m-auto'>Description:</h2>
+                  <ListGroup.Item>{product.description}</ListGroup.Item>
+                </ListGroup>
+              </Col>
+            </Row>
           </Row>
         </>
       )}
