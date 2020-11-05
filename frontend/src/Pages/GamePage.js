@@ -6,19 +6,17 @@ import Product from '../components/Product'
 import Loader from '../components/Loader'
 import Message from '../components/Message'
 import GamePaginate from '../components/GamePaginate'
-import { listProducts } from '../actions/productActions'
+import { listProductsGames } from '../actions/productActions'
 
 const GamePage = ({ match }) => {
-  const keyword = 'GAME'
-
   const pageNumber = match.params.pageNumber || 1
   const dispatch = useDispatch()
 
-  const productList = useSelector(state => state.productList)
-  const { loading, error, products, page, pages } = productList
+  const productListGames = useSelector(state => state.productListGames)
+  const { loading, error, products, page, pages } = productListGames
 
   useEffect(() => {
-    dispatch(listProducts('', pageNumber))
+    dispatch(listProductsGames(pageNumber))
   }, [dispatch, pageNumber])
   return (
     <>
@@ -43,7 +41,7 @@ const GamePage = ({ match }) => {
           </Row>
         </>
       )}
-      <GamePaginate pages={pages} page={page} keyword={keyword} />
+      <GamePaginate pages={pages} page={page} />
     </>
   )
 }

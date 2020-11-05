@@ -7,19 +7,17 @@ import Product from '../components/Product'
 import Loader from '../components/Loader'
 import Message from '../components/Message'
 import DvdPaginate from '../components/DvdPaginate'
-import { listProducts } from '../actions/productActions'
+import { listProductsDvd } from '../actions/productActions'
 
 const DvdPage = ({ match }) => {
-  const keyword = 'DVD'
-
   const pageNumber = match.params.pageNumber || 1
   const dispatch = useDispatch()
 
-  const productList = useSelector(state => state.productList)
-  const { loading, error, products, page, pages } = productList
+  const productListDvd = useSelector(state => state.productListDvd)
+  const { loading, error, products, page, pages } = productListDvd
 
   useEffect(() => {
-    dispatch(listProducts('', pageNumber))
+    dispatch(listProductsDvd(pageNumber))
   }, [dispatch, pageNumber])
   return (
     <>
@@ -44,7 +42,7 @@ const DvdPage = ({ match }) => {
           </Row>
         </>
       )}
-      <DvdPaginate pages={pages} page={page} keyword={keyword} />
+      <DvdPaginate pages={pages} page={page} />
     </>
   )
 }

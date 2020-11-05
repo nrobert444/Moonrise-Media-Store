@@ -6,17 +6,17 @@ import Product from '../components/Product'
 import Loader from '../components/Loader'
 import Message from '../components/Message'
 import BluRayPaginate from '../components/BluRayPaginate'
-import { listProducts } from '../actions/productActions'
+import { listProductsBluray } from '../actions/productActions'
 
 const BlurayPage = ({ match }) => {
   const pageNumber = match.params.pageNumber || 1
   const dispatch = useDispatch()
 
-  const productList = useSelector(state => state.productList)
-  const { loading, error, products, page, pages } = productList
+  const productListBluray = useSelector(state => state.productListBluray)
+  const { loading, error, products, page, pages } = productListBluray
 
   useEffect(() => {
-    dispatch(listProducts('', pageNumber))
+    dispatch(listProductsBluray(pageNumber))
   }, [dispatch, pageNumber])
 
   return (

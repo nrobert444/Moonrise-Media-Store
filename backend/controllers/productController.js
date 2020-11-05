@@ -23,7 +23,7 @@ const getProducts = asyncHandler(async (req, res) => {
 })
 
 //@desc Fetch all product routes by category DVD
-//@route GET /api/products/dvd
+//@route GET /api/products/dvd/
 //@access public
 const getProductsCategoryDvd = asyncHandler(async (req, res) => {
   const pageSize = 10
@@ -36,7 +36,7 @@ const getProductsCategoryDvd = asyncHandler(async (req, res) => {
   res.json({ products, page, pages: Math.ceil(count / pageSize) })
 })
 //@desc Fetch all product routes by category Bluray
-//@route GET /api/products/bluray
+//@route GET /api/products/bluray/
 //@access public
 const getProductsCategoryBluray = asyncHandler(async (req, res) => {
   const pageSize = 10
@@ -49,7 +49,7 @@ const getProductsCategoryBluray = asyncHandler(async (req, res) => {
   res.json({ products, page, pages: Math.ceil(count / pageSize) })
 })
 //@desc Fetch all product routes by category Games
-//@route GET /api/products/dvd
+//@route GET /api/products/games/
 //@access public
 const getProductsCategoryGames = asyncHandler(async (req, res) => {
   const pageSize = 10
