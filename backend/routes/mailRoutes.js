@@ -1,7 +1,7 @@
 import express from 'express'
 const router = express.Router()
 import nodemailer from 'nodemailer'
-import creds from '../config/mail.js'
+import { creds } from '../config/mail.js'
 
 const transport = {
   host: 'smtp.gmail.com',

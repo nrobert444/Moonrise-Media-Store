@@ -87,7 +87,7 @@ const ContactPage = () => {
         <Col md={4}>
           <FontAwesomeIcon className='fa-2x' icon={faEnvelope} />
           <h3>Email</h3>
-          <h6>Nick@gmail.com</h6>
+          <h6>moonrisestore44@gmail.com</h6>
         </Col>
         <Col md={4}>
           <FontAwesomeIcon className='fa-2x' icon={faPhone} />

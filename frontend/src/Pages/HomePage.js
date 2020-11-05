@@ -6,7 +6,6 @@ import { Row, Col } from 'react-bootstrap'
 import { listProducts } from '../actions/productActions'
 import Loader from '../components/Loader'
 import Message from '../components/Message'
-// import Paginate from '../components/Paginate'
 import Meta from '../components/Meta'
 
 const HomePage = ({ match }) => {
@@ -16,7 +15,7 @@ const HomePage = ({ match }) => {
   const dispatch = useDispatch()
 
   const productList = useSelector(state => state.productList)
-  const { loading, error, products, page, pages } = productList
+  const { loading, error, products } = productList
 
   useEffect(() => {
     dispatch(listProducts(keyword, pageNumber))
@@ -81,7 +80,6 @@ const HomePage = ({ match }) => {
           </Row>
         </>
       )}
-      {/* <Paginate pages={pages} page={page} keyword={keyword ? keyword : ''} /> */}
     </>
   )
 }
