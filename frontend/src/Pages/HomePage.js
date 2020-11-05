@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 import Product from '../components/Product'
 import { Row, Col } from 'react-bootstrap'
 import { listProducts } from '../actions/productActions'
+import ProductCarousel from '../components/ProductCarousel'
 import Loader from '../components/Loader'
 import Message from '../components/Message'
 import Meta from '../components/Meta'
@@ -24,6 +25,13 @@ const HomePage = ({ match }) => {
   return (
     <>
       <Meta />
+      {!keyword ? (
+        <ProductCarousel />
+      ) : (
+        <Link to='/' className='btn btn-light'>
+          Go Back
+        </Link>
+      )}
       {loading ? (
         <Loader />
       ) : error ? (
@@ -31,7 +39,7 @@ const HomePage = ({ match }) => {
       ) : (
         <>
           <Link to='/shop/dvd'>
-            <h4>DVDs - See All</h4>
+            <h4 className='mt-3'>DVDs - See All</h4>
           </Link>
           <Row>
             {products
