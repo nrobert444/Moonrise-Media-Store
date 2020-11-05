@@ -35,14 +35,23 @@ const BlurayPage = ({ match }) => {
             {products
               .filter(product => product.category === 'Blu-Ray')
               .map(product => (
-                <Col sm={12} md={6} lg={4} xl={3} key={product._id}>
+                <Col
+                  sm={12}
+                  md={6}
+                  lg={4}
+                  xl={3}
+                  key={product._id}
+                  className='bg-dark'
+                >
                   <Product product={product} />
                 </Col>
               ))}
           </Row>
         </>
       )}
-      <BluRayPaginate pages={pages} page={page} />
+      <Row className='mt-3'>
+        <BluRayPaginate pages={pages} page={page} />
+      </Row>
     </>
   )
 }

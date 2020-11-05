@@ -25,28 +25,27 @@ const HomePage = ({ match }) => {
   return (
     <>
       <Meta />
+      {error && <Message variant='danger'>{error}</Message>}
+      {loading && <Loader />}
       {!keyword ? (
-        <ProductCarousel />
-      ) : (
-        <Link to='/' className='btn btn-light'>
-          Go Back
-        </Link>
-      )}
-      {loading ? (
-        <Loader />
-      ) : error ? (
-        <Message variant='danger'>{error}</Message>
-      ) : (
         <>
+          <ProductCarousel />
           <Link to='/shop/dvd'>
-            <h4 className='mt-3'>DVDs - See All</h4>
+            <h4 className='mt-3 mb-3'>DVDs - See All</h4>
           </Link>
           <Row>
             {products
               .filter(product => product.category === 'DVD')
               .map((product, idx) =>
                 idx < 4 ? (
-                  <Col sm={12} md={6} lg={4} xl={3} key={product._id}>
+                  <Col
+                    sm={12}
+                    md={6}
+                    lg={4}
+                    xl={3}
+                    key={product._id}
+                    className='bg-dark'
+                  >
                     <Product product={product} />
                   </Col>
                 ) : (
@@ -55,14 +54,21 @@ const HomePage = ({ match }) => {
               )}
           </Row>
           <Link to='/shop/bluray'>
-            <h4>Blu-Rays - See All</h4>
+            <h4 className='mt-3 mb-3'>Blu-Rays - See All</h4>
           </Link>
           <Row>
             {products
               .filter(product => product.category === 'Blu-Ray')
               .map((product, idx) =>
                 idx < 4 ? (
-                  <Col sm={12} md={6} lg={4} xl={3} key={product._id}>
+                  <Col
+                    sm={12}
+                    md={6}
+                    lg={4}
+                    xl={3}
+                    key={product._id}
+                    className='bg-dark'
+                  >
                     <Product product={product} />
                   </Col>
                 ) : (
@@ -71,14 +77,87 @@ const HomePage = ({ match }) => {
               )}
           </Row>
           <Link to='/shop/games'>
-            <h4>Games - See All</h4>
+            <h4 className='mt-3 mb-3'>Games - See All</h4>
           </Link>
           <Row>
             {products
               .filter(product => product.category === 'GAME')
               .map((product, idx) =>
                 idx < 4 ? (
-                  <Col sm={12} md={6} lg={4} xl={3} key={product._id}>
+                  <Col
+                    sm={12}
+                    md={6}
+                    lg={4}
+                    xl={3}
+                    key={product._id}
+                    className='bg-dark'
+                  >
+                    <Product product={product} />
+                  </Col>
+                ) : (
+                  ''
+                )
+              )}
+          </Row>
+        </>
+      ) : (
+        <>
+          <Link to='/' className='btn btn-light'>
+            Go Back
+          </Link>
+          <Row>
+            {products
+              .filter(product => product.category === 'DVD')
+              .map((product, idx) =>
+                idx < 4 ? (
+                  <Col
+                    sm={12}
+                    md={6}
+                    lg={4}
+                    xl={3}
+                    key={product._id}
+                    className='bg-dark'
+                  >
+                    <Product product={product} />
+                  </Col>
+                ) : (
+                  ''
+                )
+              )}
+          </Row>
+          <Row>
+            {products
+              .filter(product => product.category === 'Blu-Ray')
+              .map((product, idx) =>
+                idx < 4 ? (
+                  <Col
+                    sm={12}
+                    md={6}
+                    lg={4}
+                    xl={3}
+                    key={product._id}
+                    className='bg-dark'
+                  >
+                    <Product product={product} />
+                  </Col>
+                ) : (
+                  ''
+                )
+              )}
+          </Row>
+          <Row>
+            {products
+              .filter(product => product.category === 'GAME')
+              .map((product, idx) =>
+                idx < 4 ? (
+                  <Col
+                    sm={12}
+                    md={6}
+                    lg={4}
+                    xl={3}
+                    key={product._id}
+                    className='bg-dark'
+                  >
                     <Product product={product} />
                   </Col>
                 ) : (
