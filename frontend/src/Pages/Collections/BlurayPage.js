@@ -9,7 +9,8 @@ import { listProductsBluray } from '../../actions/productActions'
 import {
   CollectionPageContainer,
   CollectionTitle,
-  CollectionItemsContainer
+  CollectionItemsContainer,
+  PageContainer
 } from './Collection.styles'
 
 const BlurayPage = ({ match }) => {
@@ -44,7 +45,9 @@ const BlurayPage = ({ match }) => {
           </CollectionItemsContainer>
         </CollectionPageContainer>
       )}
-      <BluRayPaginate pages={pages} page={page} />
+      <PageContainer>
+        <BluRayPaginate pages={pages} page={page} />
+      </PageContainer>
     </>
   )
 }

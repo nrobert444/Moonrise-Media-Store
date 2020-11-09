@@ -4,7 +4,7 @@ export const CollectionItemContainer = styled.div`
   width: 22vw;
   display: flex;
   flex-direction: column;
-  height: 350px;
+  height: 400px;
   align-items: center;
   position: relative;
   &:hover {
@@ -42,20 +42,18 @@ export const CollectionFooterContainer = styled.div`
   width: 100%;
   height: 5%;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   font-size: 18px;
 `
 
 export const NameContainer = styled.span`
-  width: 60%;
+  width: 70%;
+  flex-wrap: nowrap;
   margin-bottom: 15px;
-`
-export const ConditionContainer = styled.span`
-  width: 30%;
-  text-align: center;
 `
 
 export const PriceContainer = styled.span`
   width: 10%;
   text-align: right;
 `
+

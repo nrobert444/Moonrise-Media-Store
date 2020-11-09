@@ -23,3 +23,10 @@ export const CollectionItemsContainer = styled.div`
     grid-gap: 15px;
   }
 `
+export const PageContainer = styled.div`
+  width: 100%;
+  height: 5vh;
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+`
