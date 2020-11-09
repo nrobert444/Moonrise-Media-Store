@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
-import Message from '../components/Message'
+import Message from '../../components/Message'
 import { Row, Col, Button, ListGroup, Form, Card, Image } from 'react-bootstrap'
-import { addToCart, removeFromCart } from '../actions/cartActions'
+import { addToCart, removeFromCart } from '../../actions/cartActions'
 
 export const CartPage = ({ match, location, history }) => {
   const productId = match.params.id
@@ -11,6 +11,7 @@ export const CartPage = ({ match, location, history }) => {
   const dispatch = useDispatch()
   const cart = useSelector(state => state.cart)
   const { cartItems } = cart
+
   useEffect(() => {
     if (productId) {
       dispatch(addToCart(productId, qty))
@@ -41,7 +42,7 @@ export const CartPage = ({ match, location, history }) => {
                     <Image src={item.image} alt={item.name} fluid rounded />
                   </Col>
                   <Col md={3}>
-                    <Link to={`/product/${item.product}`}>{item.name}</Link>}
+                    <Link to={`/product/${item.product}`}>{item.name}</Link>
                   </Col>
                   <Col md={2}>${item.price}</Col>
                   <Col md={2}>

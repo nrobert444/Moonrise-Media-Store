@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { Link } from 'react-router-dom'
 import Product from '../../components/Product/Product'
 import { listProducts } from '../../actions/productActions'
 import Loader from '../../components/Loader'
