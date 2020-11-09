@@ -19,9 +19,9 @@ import UserEditPage from './Pages/UserEditPage'
 import ProductListPage from './Pages/ProductListPage'
 import ProductEditPage from './Pages/ProductEditPage'
 import OrderListPage from './Pages/OrderListPage'
-import BlurayPage from './Pages/BlurayPage'
-import DvdPage from './Pages/DvdPage'
-import GamePage from './Pages/GamePage'
+import BlurayPage from './Pages/Collections/BlurayPage'
+import DvdPage from './Pages/Collections/DvdPage'
+import GamePage from './Pages/Collections/GamePage'
 import ContactPage from './Pages/ContactPage'
 
 const App = () => {
