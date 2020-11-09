@@ -13,6 +13,7 @@ export const CollectionTitle = styled.h2`
 
 export const CollectionItemsContainer = styled.div`
   display: grid;
+  grid-template-rows: auto;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-gap: 10px;
   & > div {

@@ -35,7 +35,7 @@ const BlurayPage = ({ match }) => {
         <Message variant='danger'>{error}</Message>
       ) : (
         <CollectionPageContainer>
-          <CollectionTitle>Blu-Rays</CollectionTitle>
+          <CollectionTitle>Blu-Ray</CollectionTitle>
           <CollectionItemsContainer>
             {products
               .filter(product => product.category === 'Blu-Ray')

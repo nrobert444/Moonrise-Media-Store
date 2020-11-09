@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import CustomButton from '../CustomButton/CustomButton'
 
 export const CollectionItemContainer = styled.div`
   width: 22vw;
@@ -29,6 +30,20 @@ export const CollectionItemContainer = styled.div`
   }
 `
 
+export const SeeMoreButton = styled(CustomButton)`
+  width: 80%;
+  opacity: 0.7;
+  position: absolute;
+  top: 255px;
+  display: none;
+  @media screen and (max-width: 800px) {
+    display: block;
+    opacity: 0.9;
+    min-width: unset;
+    padding: 0 10px;
+  }
+`
+
 export const BackgroundImage = styled.div`
   width: 100%;
   height: 95%;
@@ -56,4 +71,3 @@ export const PriceContainer = styled.span`
   width: 10%;
   text-align: right;
 `
-

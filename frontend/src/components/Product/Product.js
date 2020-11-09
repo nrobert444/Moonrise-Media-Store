@@ -5,6 +5,7 @@ import {
   CollectionFooterContainer,
   BackgroundImage,
   NameContainer,
+  SeeMoreButton,
   PriceContainer
 } from './Product.styles'
 
@@ -19,6 +20,7 @@ const Product = ({ product }) => {
             <NameContainer>{name}</NameContainer>
             <PriceContainer>{price}</PriceContainer>
           </CollectionFooterContainer>
+          <SeeMoreButton inverted>See More</SeeMoreButton>
         </CollectionItemContainer>
       </Link>
     </>
