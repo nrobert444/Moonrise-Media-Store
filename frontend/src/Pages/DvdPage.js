@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { Row, Col } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 
-import Product from '../components/Product'
+import Product from '../components/Product/Product'
 import Loader from '../components/Loader'
 import Message from '../components/Message'
 import DvdPaginate from '../components/DvdPaginate'

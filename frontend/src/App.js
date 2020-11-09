@@ -28,7 +28,7 @@ const App = () => {
   return (
     <Router>
       <Header />
-      <main className='py-3' style={{ backgroundColor: '#ffffe6' }}>
+      <main className='py-3'>
         <Container>
           <Route path='/order/:id' component={OrderPage} />
           <Route path='/shipping' component={ShippingPage} />

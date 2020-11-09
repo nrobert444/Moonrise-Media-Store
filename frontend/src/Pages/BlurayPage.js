@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { Row, Col } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
-import Product from '../components/Product'
+import Product from '../components/Product/Product'
 import Loader from '../components/Loader'
 import Message from '../components/Message'
 import BluRayPaginate from '../components/BluRayPaginate'
@@ -35,14 +35,7 @@ const BlurayPage = ({ match }) => {
             {products
               .filter(product => product.category === 'Blu-Ray')
               .map(product => (
-                <Col
-                  sm={12}
-                  md={6}
-                  lg={4}
-                  xl={3}
-                  key={product._id}
-                  className='bg-dark'
-                >
+                <Col sm={12} md={6} lg={4} xl={3} key={product._id}>
                   <Product product={product} />
                 </Col>
               ))}

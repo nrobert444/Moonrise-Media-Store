@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
-import Product from '../components/Product'
+import Product from '../components/Product/Product'
 import { Row, Col } from 'react-bootstrap'
 import { listProducts } from '../actions/productActions'
 import ProductCarousel from '../components/ProductCarousel'
@@ -38,14 +38,7 @@ const HomePage = ({ match }) => {
               .filter(product => product.category === 'DVD')
               .map((product, idx) =>
                 idx < 4 ? (
-                  <Col
-                    sm={12}
-                    md={6}
-                    lg={4}
-                    xl={3}
-                    key={product._id}
-                    className='bg-dark'
-                  >
+                  <Col sm={12} md={6} lg={4} xl={3} key={product._id}>
                     <Product product={product} />
                   </Col>
                 ) : (
@@ -61,14 +54,7 @@ const HomePage = ({ match }) => {
               .filter(product => product.category === 'Blu-Ray')
               .map((product, idx) =>
                 idx < 4 ? (
-                  <Col
-                    sm={12}
-                    md={6}
-                    lg={4}
-                    xl={3}
-                    key={product._id}
-                    className='bg-dark'
-                  >
+                  <Col sm={12} md={6} lg={4} xl={3} key={product._id}>
                     <Product product={product} />
                   </Col>
                 ) : (
@@ -84,14 +70,7 @@ const HomePage = ({ match }) => {
               .filter(product => product.category === 'GAME')
               .map((product, idx) =>
                 idx < 4 ? (
-                  <Col
-                    sm={12}
-                    md={6}
-                    lg={4}
-                    xl={3}
-                    key={product._id}
-                    className='bg-dark'
-                  >
+                  <Col sm={12} md={6} lg={4} xl={3} key={product._id}>
                     <Product product={product} />
                   </Col>
                 ) : (
@@ -110,14 +89,7 @@ const HomePage = ({ match }) => {
               .filter(product => product.category === 'DVD')
               .map((product, idx) =>
                 idx < 4 ? (
-                  <Col
-                    sm={12}
-                    md={6}
-                    lg={4}
-                    xl={3}
-                    key={product._id}
-                    className='bg-dark'
-                  >
+                  <Col sm={12} md={6} lg={4} xl={3} key={product._id}>
                     <Product product={product} />
                   </Col>
                 ) : (
@@ -130,14 +102,7 @@ const HomePage = ({ match }) => {
               .filter(product => product.category === 'Blu-Ray')
               .map((product, idx) =>
                 idx < 4 ? (
-                  <Col
-                    sm={12}
-                    md={6}
-                    lg={4}
-                    xl={3}
-                    key={product._id}
-                    className='bg-dark'
-                  >
+                  <Col sm={12} md={6} lg={4} xl={3} key={product._id}>
                     <Product product={product} />
                   </Col>
                 ) : (
@@ -150,14 +115,7 @@ const HomePage = ({ match }) => {
               .filter(product => product.category === 'GAME')
               .map((product, idx) =>
                 idx < 4 ? (
-                  <Col
-                    sm={12}
-                    md={6}
-                    lg={4}
-                    xl={3}
-                    key={product._id}
-                    className='bg-dark'
-                  >
+                  <Col sm={12} md={6} lg={4} xl={3} key={product._id}>
                     <Product product={product} />
                   </Col>
                 ) : (
