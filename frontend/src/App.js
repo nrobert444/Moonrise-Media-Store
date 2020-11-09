@@ -1,5 +1,6 @@
 import React from 'react'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
+import { GlobalStyle } from './globalStyles'
 import { Container } from 'react-bootstrap'
 import Header from './components/Header'
 import AboutPage from './Pages/AboutPage'
@@ -27,6 +28,7 @@ import ContactPage from './Pages/ContactPage'
 const App = () => {
   return (
     <Router>
+      <GlobalStyle />
       <Header />
       <main className='py-3'>
         <Container>
