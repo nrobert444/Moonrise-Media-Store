@@ -5,7 +5,7 @@ export const CollectionItemContainer = styled.div`
   width: 22vw;
   display: flex;
   flex-direction: column;
-  height: 400px;
+  height: 350px;
   align-items: center;
   position: relative;
   &:hover {
@@ -36,7 +36,7 @@ export const SeeMoreButton = styled(CustomButton)`
   position: absolute;
   top: 255px;
   display: none;
-  @media screen and (max-width: 800px) {
+  @media screen and (max-width: 600px) {
     display: block;
     opacity: 0.9;
     min-width: unset;
