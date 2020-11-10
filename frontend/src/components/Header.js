@@ -18,9 +18,8 @@ const Header = () => {
 
   return (
     <header>
-      <Navbar bg='dark' variant='dark' expand='xl' collapseOnSelect>
+      <Navbar bg='dark' variant='dark' expand='lg' collapseOnSelect>
         <Container>
-          <img src={moonLogo} alt='store logo' />
           <LinkContainer to='/'>
             <Navbar.Brand>Moonrise Media</Navbar.Brand>
           </LinkContainer>
@@ -30,8 +29,7 @@ const Header = () => {
             <Nav className='ml-auto'>
               <LinkContainer to='/cart'>
                 <Nav.Link>
-                  <i className='fas fa-shopping-cart' />
-                  Cart
+                  <i className='fas fa-shopping-cart fa-lg' />
                 </Nav.Link>
               </LinkContainer>
               {userInfo ? (
@@ -64,7 +62,7 @@ const Header = () => {
                   </LinkContainer>
                 </NavDropdown>
               )}
-              <NavDropdown title='Shop' id='shopmenu'>
+              <NavDropdown title='Shop' id='shopmenu' className='mr-auto'>
                 <LinkContainer to='/shop/dvd'>
                   <NavDropdown.Item>DVD</NavDropdown.Item>
                 </LinkContainer>
