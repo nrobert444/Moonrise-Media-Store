@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { Row, Col, Image, Card } from 'react-bootstrap'
 import logo from '../assets/Moonrise Media LLC Logo.png'
+
 const AboutPage = () => {
   return (
     <>

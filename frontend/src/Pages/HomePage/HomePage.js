@@ -10,8 +10,7 @@ import {
   CollectionPreviewContainer,
   CollectionItemsContainer,
   TitleContainer,
-  GoBackLink,
-  PreviewContainer
+  GoBackLink
 } from './HomePage.styles'
 
 const HomePage = ({ match }) => {

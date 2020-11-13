@@ -3,11 +3,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { Container, Row, Col, Form, Button } from 'react-bootstrap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {
-  faPhone,
-  faEnvelope,
-  faAddressCard
-} from '@fortawesome/free-solid-svg-icons'
+import { faPhone, faAddressCard } from '@fortawesome/free-solid-svg-icons'
 import FormContainer from '../components/FormContainer'
 import Message from '../components/Message'
 import Loader from '../components/Loader'

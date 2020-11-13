@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import CustomButton from '../CustomButton/CustomButton'
+import { Link } from 'react-router-dom'
 
 export const HomeSplashContainer = styled.div`
   background: url('../images/moonrisesplash.jpeg') no-repeat center right/cover;
@@ -68,5 +69,18 @@ export const CategoryButton = styled(CustomButton)`
     display: none;
     min-width: unset;
     padding: 0 10px;
+  }
+`
+
+export const ButtonLink = styled(Link)`
+  text-decoration: none;
+  color: inherit;
+
+  &:focus,
+  &:hover,
+  &:visited,
+  &:link,
+  &:active {
+    text-decoration: none;
   }
 `
