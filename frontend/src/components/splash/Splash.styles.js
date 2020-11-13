@@ -12,7 +12,7 @@ export const HomeSplashContainer = styled.div`
     text-align: center;
     padding-top: 20%;
     & h1 {
-      font-size: 4rem;
+      font-size: 5rem;
       color: #fff;
       line-height: 1.2;
     }
@@ -51,7 +51,6 @@ export const HomeSplashContainer = styled.div`
 `
 export const CategoryButton = styled(CustomButton)`
   width: 10%;
-  opacity: 0.7;
   background-color: #292b2c;
   border: 2px solid #5cb85c;
   color: #5cb85c;

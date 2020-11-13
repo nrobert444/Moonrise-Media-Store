@@ -1,5 +1,6 @@
 import React from 'react'
 import { HomeSplashContainer, CategoryButton } from './Splash.styles'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const Splash = () => {
   return (

@@ -8,6 +8,7 @@ import Meta from '../../components/Meta'
 import Splash from '../../components/splash/Splash'
 import {
   CollectionPreviewContainer,
+  CollectionItemsContainer,
   TitleContainer,
   GoBackLink,
   PreviewContainer
@@ -35,36 +36,36 @@ const HomePage = ({ match }) => {
         <>
           <Splash />
           <CollectionPreviewContainer>
-            <GoBackLink to='/shop/dvd'>
-              <TitleContainer>DVDs</TitleContainer>
-            </GoBackLink>
-            <PreviewContainer>
+            <TitleContainer>
+              <GoBackLink to='/shop/dvd'>DVDs</GoBackLink>
+            </TitleContainer>
+            <CollectionItemsContainer>
               {products
                 .filter(product => product.category === 'DVD')
                 .map((product, idx) =>
-                  idx < 4 ? <Product product={product} /> : ''
+                  idx < 4 ? <Product key={product._id} product={product} /> : ''
                 )}
-            </PreviewContainer>
-            <GoBackLink to='/shop/bluray'>
-              <TitleContainer>Blu-Rays</TitleContainer>
-            </GoBackLink>
-            <PreviewContainer>
+            </CollectionItemsContainer>
+            <TitleContainer>
+              <GoBackLink to='/shop/bluray'>Blu-Rays</GoBackLink>
+            </TitleContainer>
+            <CollectionItemsContainer>
               {products
                 .filter(product => product.category === 'Blu-Ray')
                 .map((product, idx) =>
-                  idx < 4 ? <Product product={product} /> : ''
+                  idx < 4 ? <Product key={product._id} product={product} /> : ''
                 )}
-            </PreviewContainer>
-            <GoBackLink to='/shop/games'>
-              <TitleContainer>Games</TitleContainer>
-            </GoBackLink>
-            <PreviewContainer>
+            </CollectionItemsContainer>
+            <TitleContainer>
+              <GoBackLink to='/shop/games'>Games</GoBackLink>
+            </TitleContainer>
+            <CollectionItemsContainer>
               {products
                 .filter(product => product.category === 'GAME')
                 .map((product, idx) =>
-                  idx < 4 ? <Product product={product} /> : ''
+                  idx < 4 ? <Product key={product._id} product={product} /> : ''
                 )}
-            </PreviewContainer>
+            </CollectionItemsContainer>
           </CollectionPreviewContainer>
         </>
       ) : (
@@ -73,27 +74,27 @@ const HomePage = ({ match }) => {
             Go Back
           </GoBackLink>
           <CollectionPreviewContainer>
-            <PreviewContainer>
+            <CollectionItemsContainer>
               {products
                 .filter(product => product.category === 'DVD')
                 .map((product, idx) =>
                   idx < 4 ? <Product product={product} /> : ''
                 )}
-            </PreviewContainer>
-            <PreviewContainer>
+            </CollectionItemsContainer>
+            <CollectionItemsContainer>
               {products
                 .filter(product => product.category === 'Blu-Ray')
                 .map((product, idx) =>
                   idx < 4 ? <Product product={product} /> : ''
                 )}
-            </PreviewContainer>
-            <PreviewContainer>
+            </CollectionItemsContainer>
+            <CollectionItemsContainer>
               {products
                 .filter(product => product.category === 'GAME')
                 .map((product, idx) =>
                   idx < 4 ? <Product product={product} /> : ''
                 )}
-            </PreviewContainer>
+            </CollectionItemsContainer>
           </CollectionPreviewContainer>
         </>
       )}
