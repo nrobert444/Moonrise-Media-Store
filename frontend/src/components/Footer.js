@@ -2,19 +2,23 @@ import React from 'react'
 import { Container, Row, Col, Nav, Navbar } from 'react-bootstrap'
 import { LinkContainer } from 'react-router-bootstrap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faTwitter, faLinkedin } from '@fortawesome/free-brands-svg-icons'
+import {
+  faTwitter,
+  faLinkedin,
+  faGithub
+} from '@fortawesome/free-brands-svg-icons'
 import { faPhone, faUser } from '@fortawesome/free-solid-svg-icons'
 
 const Footer = () => {
   return (
     <footer>
-      <Navbar bg='dark' variant='dark' expand='lg' collapseOnSelect>
+      <Navbar bg='dark' variant='dark' expand='md' collapseOnSelect>
         <Container>
           <Navbar.Toggle aria-controls='basic-navbar-nav' />
           <Navbar.Collapse>
             <Row>
               <Col className='text-left'>
-                Copyright &copy; Moonrise Media LLC
+                Copyright &copy; 2020 Moonrise Media LLC All Rights Reserved
               </Col>
             </Row>
             <Nav className='ml-auto'>
@@ -34,6 +38,9 @@ const Footer = () => {
               </Nav.Link>
               <Nav.Link href='https://twitter.com/Nichola55137683'>
                 <FontAwesomeIcon className='fab fa-2x' icon={faTwitter} />
+              </Nav.Link>
+              <Nav.Link href='https://github.com/nrobert444'>
+                <FontAwesomeIcon className='fab fa-2x' icon={faGithub} />
               </Nav.Link>
             </Nav>
           </Navbar.Collapse>

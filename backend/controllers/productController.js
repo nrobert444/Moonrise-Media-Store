@@ -95,15 +95,15 @@ const deleteProductById = asyncHandler(async (req, res) => {
 //@access Private/Admin
 const createProduct = asyncHandler(async (req, res) => {
   const product = new Product({
-    name: 'Sample name',
+    name: '',
     price: 0,
     user: req.user._id,
-    image: '/images/sample.jpg',
+    image: '',
     upc: 0,
     category: 'DVD',
     countInStock: 0,
     condition: 'USED',
-    description: 'Sample description'
+    description: ''
   })
 
   const createdProduct = await product.save()
@@ -144,8 +144,17 @@ const updateProduct = asyncHandler(async (req, res) => {
   }
 })
 
+// @desc    Get top rated products
+// @route   GET /api/products/top
+// @access  Public
+const getTopProducts = asyncHandler(async (req, res) => {
+  const products = await Product.find({}).sort({ upc: 'desc' }).limit(3)
+
+  res.json(products)
+})
 export {
   getProducts,
+  getTopProducts,
   getProductById,
   getProductsCategoryDvd,
   getProductsCategoryBluray,

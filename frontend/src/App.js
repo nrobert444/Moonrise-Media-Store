@@ -1,12 +1,12 @@
 import React from 'react'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
-import { Container } from 'react-bootstrap'
+import { GlobalStyle } from './globalStyles'
 import Header from './components/Header'
 import AboutPage from './Pages/AboutPage'
 import Footer from './components/Footer'
-import HomePage from './Pages/HomePage'
+import HomePage from './Pages/HomePage/HomePage'
 import ProductPage from './Pages/ProductPage'
-import CartPage from './Pages/CartPage'
+import CartPage from './Pages/CartPage/CartPage'
 import LoginPage from './Pages/LoginPage'
 import RegisterPage from './Pages/RegisterPage'
 import ProfilePage from './Pages/ProfilePage'
@@ -19,17 +19,18 @@ import UserEditPage from './Pages/UserEditPage'
 import ProductListPage from './Pages/ProductListPage'
 import ProductEditPage from './Pages/ProductEditPage'
 import OrderListPage from './Pages/OrderListPage'
-import BlurayPage from './Pages/BlurayPage'
-import DvdPage from './Pages/DvdPage'
-import GamePage from './Pages/GamePage'
+import BlurayPage from './Pages/Collections/BlurayPage'
+import DvdPage from './Pages/Collections/DvdPage'
+import GamePage from './Pages/Collections/GamePage'
 import ContactPage from './Pages/ContactPage'
 
 const App = () => {
   return (
-    <Router>
-      <Header />
-      <main className='py-3' style={{ backgroundColor: '#ffffe6' }}>
-        <Container>
+    <>
+      <GlobalStyle />
+      <Router>
+        <Header />
+        <main className='py-2 px-3'>
           <Route path='/order/:id' component={OrderPage} />
           <Route path='/shipping' component={ShippingPage} />
           <Route path='/payment' component={PaymentPage} />
@@ -65,10 +66,10 @@ const App = () => {
           <Route path='/about' component={AboutPage} exact />
           <Route path='/contact' component={ContactPage} exact />
           <Route path='/' component={HomePage} exact />
-        </Container>
-      </main>
-      <Footer />
-    </Router>
+        </main>
+        <Footer />
+      </Router>
+    </>
   )
 }
 
