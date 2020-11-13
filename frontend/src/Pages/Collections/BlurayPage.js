@@ -1,12 +1,17 @@
 import React, { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { Row, Col } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
-import Product from '../components/Product'
-import Loader from '../components/Loader'
-import Message from '../components/Message'
-import BluRayPaginate from '../components/BluRayPaginate'
-import { listProductsBluray } from '../actions/productActions'
+import Product from '../../components/Product/Product'
+import Loader from '../../components/Loader'
+import Message from '../../components/Message'
+import BluRayPaginate from '../../components/BluRayPaginate'
+import { listProductsBluray } from '../../actions/productActions'
+import {
+  CollectionPageContainer,
+  CollectionTitle,
+  CollectionItemsContainer,
+  PageContainer
+} from './Collection.styles'
 
 const BlurayPage = ({ match }) => {
   const pageNumber = match.params.pageNumber || 1
@@ -29,20 +34,20 @@ const BlurayPage = ({ match }) => {
       ) : error ? (
         <Message variant='danger'>{error}</Message>
       ) : (
-        <>
-          <h1>Blu-Rays</h1>
-          <Row>
+        <CollectionPageContainer>
+          <CollectionTitle>Blu-Ray</CollectionTitle>
+          <CollectionItemsContainer>
             {products
               .filter(product => product.category === 'Blu-Ray')
               .map(product => (
-                <Col sm={12} md={6} lg={4} xl={3} key={product._id}>
-                  <Product product={product} />
-                </Col>
+                <Product key={product._id} product={product} />
               ))}
-          </Row>
-        </>
+          </CollectionItemsContainer>
+        </CollectionPageContainer>
       )}
-      <BluRayPaginate pages={pages} page={page} />
+      <PageContainer>
+        <BluRayPaginate pages={pages} page={page} />
+      </PageContainer>
     </>
   )
 }

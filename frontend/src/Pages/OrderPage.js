@@ -90,8 +90,8 @@ const OrderPage = ({ match, history }) => {
               <h2>Shipping</h2>
               <p>
                 <strong>Name: </strong>
+                {order.user.name}
               </p>
-              {order.user.name}
               <p>
                 <strong>Email: </strong>
                 <a href={`mailto:${order.user.email}`}>{order.user.email}</a>
@@ -102,9 +102,10 @@ const OrderPage = ({ match, history }) => {
                 {order.shippingAddress.postalCode},{' '}
                 {order.shippingAddress.country}
               </p>
+
               {order.isDelivered ? (
                 <Message variant='success'>
-                  Delivered On {order.deliveredAt}
+                  Delivered On {order.deliveredAt.substring(0, 10)}
                 </Message>
               ) : (
                 <Message variant='danger'>Not Delivered</Message>
@@ -115,10 +116,16 @@ const OrderPage = ({ match, history }) => {
               <h2>Payment Method</h2>
               <p>
                 <strong>Payment Method: </strong>
-                {order.paymentMethod}
+                {order.paymentMethod === 'PayPal' ? (
+                  <i class='fab fa-cc-paypal fa-2x' />
+                ) : (
+                  <i class='fab fa-cc-visa fa-2x' />
+                )}
               </p>
               {order.isPaid ? (
-                <Message variant='success'>Paid On {order.paidAt}</Message>
+                <Message variant='success'>
+                  Paid On {order.paidAt.substring(0, 10)}
+                </Message>
               ) : (
                 <Message variant='danger'>Not Paid</Message>
               )}
@@ -133,7 +140,7 @@ const OrderPage = ({ match, history }) => {
                   {order.orderItems.map((item, index) => (
                     <ListGroup.Item key={index}>
                       <Row>
-                        <Col md={1}>
+                        <Col md={2}>
                           <Image
                             src={item.image}
                             alt={item.name}
@@ -142,9 +149,11 @@ const OrderPage = ({ match, history }) => {
                           />
                         </Col>
                         <Col>
-                          <Link to={`/product/${item.product}`}>
-                            {item.name}
-                          </Link>
+                          <p>
+                            <Link to={`/product/${item.product}`}>
+                              {item.name}
+                            </Link>
+                          </p>
                         </Col>
                         <Col md={4}>
                           {item.qty} x ${item.price} = ${item.qty * item.price}

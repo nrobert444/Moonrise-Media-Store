@@ -1,13 +1,17 @@
 import React, { useEffect } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import { Row, Col } from 'react-bootstrap'
+import { useSelector, useDispatch } from 'react-redux'
 import { Link } from 'react-router-dom'
-
-import Product from '../components/Product'
-import Loader from '../components/Loader'
-import Message from '../components/Message'
-import DvdPaginate from '../components/DvdPaginate'
-import { listProductsDvd } from '../actions/productActions'
+import Product from '../../components/Product/Product'
+import Loader from '../../components/Loader'
+import Message from '../../components/Message'
+import DvdPaginate from '../../components/DvdPaginate'
+import { listProductsDvd } from '../../actions/productActions'
+import {
+  CollectionPageContainer,
+  CollectionTitle,
+  CollectionItemsContainer,
+  PageContainer
+} from './Collection.styles'
 
 const DvdPage = ({ match }) => {
   const pageNumber = match.params.pageNumber || 1
@@ -29,20 +33,20 @@ const DvdPage = ({ match }) => {
       ) : error ? (
         <Message variant='danger'>{error}</Message>
       ) : (
-        <>
-          <h1>DVDs</h1>
-          <Row>
+        <CollectionPageContainer>
+          <CollectionTitle>DVD</CollectionTitle>
+          <CollectionItemsContainer>
             {products
               .filter(product => product.category === 'DVD')
               .map(product => (
-                <Col sm={12} md={6} lg={4} xl={3} key={product._id}>
-                  <Product product={product} />
-                </Col>
+                <Product product={product} />
               ))}
-          </Row>
-        </>
+          </CollectionItemsContainer>
+        </CollectionPageContainer>
       )}
-      <DvdPaginate pages={pages} page={page} />
+      <PageContainer>
+        <DvdPaginate pages={pages} page={page} />
+      </PageContainer>
     </>
   )
 }

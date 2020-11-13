@@ -37,10 +37,10 @@ const ProductPage = ({ match, history }) => {
           <Meta title={product.name} />
           <Row>
             <Col md={4}>
-              <Image src={product.image} alt={product.name} fluid rounded />
+              <Image src={product.image} alt={product.name} fluid />
             </Col>
             <Col md={5}>
-              <ListGroup variant='flush'>
+              <ListGroup>
                 <ListGroup.Item>
                   <h3>{product.name}</h3>
                 </ListGroup.Item>
@@ -98,6 +98,7 @@ const ProductPage = ({ match, history }) => {
                       className='btn-block my-4'
                       type='button'
                       disabled={product.countInStock === 0}
+                      variant='outline-dark'
                     >
                       Add To Cart
                     </Button>
@@ -107,7 +108,7 @@ const ProductPage = ({ match, history }) => {
             </Col>
             <Row className='justify-content-md-center mt-3'>
               <Col md={10}>
-                <ListGroup variant='flush'>
+                <ListGroup>
                   <h2 className='m-auto'>Description:</h2>
                   <ListGroup.Item>{product.description}</ListGroup.Item>
                 </ListGroup>

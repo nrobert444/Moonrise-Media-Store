@@ -1,12 +1,17 @@
 import React, { useEffect } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import { Row, Col } from 'react-bootstrap'
+import { useSelector, useDispatch } from 'react-redux'
 import { Link } from 'react-router-dom'
-import Product from '../components/Product'
-import Loader from '../components/Loader'
-import Message from '../components/Message'
-import GamePaginate from '../components/GamePaginate'
-import { listProductsGames } from '../actions/productActions'
+import Product from '../../components/Product/Product'
+import Loader from '../../components/Loader'
+import Message from '../../components/Message'
+import GamePaginate from '../../components/GamePaginate'
+import { listProductsGames } from '../../actions/productActions'
+import {
+  CollectionPageContainer,
+  CollectionTitle,
+  CollectionItemsContainer,
+  PageContainer
+} from './Collection.styles'
 
 const GamePage = ({ match }) => {
   const pageNumber = match.params.pageNumber || 1
@@ -28,20 +33,20 @@ const GamePage = ({ match }) => {
       ) : error ? (
         <Message variant='danger'>{error}</Message>
       ) : (
-        <>
-          <h1>Games</h1>
-          <Row>
+        <CollectionPageContainer>
+          <CollectionTitle>Games</CollectionTitle>
+          <CollectionItemsContainer>
             {products
               .filter(product => product.category === 'GAME')
               .map(product => (
-                <Col sm={12} md={6} lg={4} xl={3} key={product._id}>
-                  <Product product={product} />
-                </Col>
+                <Product product={product} />
               ))}
-          </Row>
-        </>
+          </CollectionItemsContainer>
+        </CollectionPageContainer>
       )}
-      <GamePaginate pages={pages} page={page} />
+      <PageContainer>
+        <GamePaginate pages={pages} page={page} />
+      </PageContainer>
     </>
   )
 }

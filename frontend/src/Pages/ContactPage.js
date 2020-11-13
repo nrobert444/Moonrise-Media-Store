@@ -3,11 +3,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { Container, Row, Col, Form, Button } from 'react-bootstrap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {
-  faPhone,
-  faEnvelope,
-  faAddressCard
-} from '@fortawesome/free-solid-svg-icons'
+import { faPhone, faAddressCard } from '@fortawesome/free-solid-svg-icons'
 import FormContainer from '../components/FormContainer'
 import Message from '../components/Message'
 import Loader from '../components/Loader'
@@ -84,17 +80,12 @@ const ContactPage = () => {
         </Form>
       </FormContainer>
       <Row>
-        <Col md={4}>
-          <FontAwesomeIcon className='fa-2x' icon={faEnvelope} />
-          <h3>Email</h3>
-          <h6>Nick@gmail.com</h6>
-        </Col>
-        <Col md={4}>
+        <Col md={6}>
           <FontAwesomeIcon className='fa-2x' icon={faPhone} />
           <h3>Phone</h3>
           <h6>(843)-209-7711</h6>
         </Col>
-        <Col md={4}>
+        <Col md={6}>
           <FontAwesomeIcon className='fa-2x' icon={faAddressCard} />
           <h3>Address</h3>
           <h6>5845 NE Hoyt St. Portland, OR</h6>

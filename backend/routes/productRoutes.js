@@ -1,6 +1,7 @@
 import express from 'express'
 import {
   getProducts,
+  getTopProducts,
   getProductById,
   getProductsCategoryDvd,
   getProductsCategoryBluray,
@@ -14,6 +15,7 @@ import { isAdmin, protect } from '../middleware/authMiddleware.js'
 const router = express.Router()
 
 router.route('/').get(getProducts).post(protect, isAdmin, createProduct)
+router.route('/top').get(getTopProducts)
 router.route('/dvd/').get(getProductsCategoryDvd)
 router.route('/bluray/').get(getProductsCategoryBluray)
 router.route('/games/').get(getProductsCategoryGames)
