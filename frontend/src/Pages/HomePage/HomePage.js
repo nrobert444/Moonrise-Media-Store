@@ -5,6 +5,7 @@ import { listProducts } from '../../actions/productActions'
 import Loader from '../../components/Loader'
 import Message from '../../components/Message'
 import Meta from '../../components/Meta'
+import Splash from '../../components/splash/Splash'
 import {
   CollectionPreviewContainer,
   TitleContainer,
@@ -31,38 +32,41 @@ const HomePage = ({ match }) => {
       {error && <Message variant='danger'>{error}</Message>}
       {loading && <Loader />}
       {!keyword ? (
-        <CollectionPreviewContainer>
-          <GoBackLink to='/shop/dvd'>
-            <TitleContainer>DVDs</TitleContainer>
-          </GoBackLink>
-          <PreviewContainer>
-            {products
-              .filter(product => product.category === 'DVD')
-              .map((product, idx) =>
-                idx < 4 ? <Product product={product} /> : ''
-              )}
-          </PreviewContainer>
-          <GoBackLink to='/shop/bluray'>
-            <TitleContainer>Blu-Rays</TitleContainer>
-          </GoBackLink>
-          <PreviewContainer>
-            {products
-              .filter(product => product.category === 'Blu-Ray')
-              .map((product, idx) =>
-                idx < 4 ? <Product product={product} /> : ''
-              )}
-          </PreviewContainer>
-          <GoBackLink to='/shop/games'>
-            <TitleContainer>Games</TitleContainer>
-          </GoBackLink>
-          <PreviewContainer>
-            {products
-              .filter(product => product.category === 'GAME')
-              .map((product, idx) =>
-                idx < 4 ? <Product product={product} /> : ''
-              )}
-          </PreviewContainer>
-        </CollectionPreviewContainer>
+        <>
+          <Splash />
+          <CollectionPreviewContainer>
+            <GoBackLink to='/shop/dvd'>
+              <TitleContainer>DVDs</TitleContainer>
+            </GoBackLink>
+            <PreviewContainer>
+              {products
+                .filter(product => product.category === 'DVD')
+                .map((product, idx) =>
+                  idx < 4 ? <Product product={product} /> : ''
+                )}
+            </PreviewContainer>
+            <GoBackLink to='/shop/bluray'>
+              <TitleContainer>Blu-Rays</TitleContainer>
+            </GoBackLink>
+            <PreviewContainer>
+              {products
+                .filter(product => product.category === 'Blu-Ray')
+                .map((product, idx) =>
+                  idx < 4 ? <Product product={product} /> : ''
+                )}
+            </PreviewContainer>
+            <GoBackLink to='/shop/games'>
+              <TitleContainer>Games</TitleContainer>
+            </GoBackLink>
+            <PreviewContainer>
+              {products
+                .filter(product => product.category === 'GAME')
+                .map((product, idx) =>
+                  idx < 4 ? <Product product={product} /> : ''
+                )}
+            </PreviewContainer>
+          </CollectionPreviewContainer>
+        </>
       ) : (
         <>
           <GoBackLink to='/' className='btn btn-light'>

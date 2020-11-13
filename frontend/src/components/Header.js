@@ -5,7 +5,6 @@ import { LinkContainer } from 'react-router-bootstrap'
 import { Nav, Navbar, Container, NavDropdown } from 'react-bootstrap'
 import SearchBox from '../components/SearchBox'
 import { logout } from '../actions/userActions'
-import moonLogo from '../assets/moonLogo.png'
 
 const Header = () => {
   const dispatch = useDispatch()

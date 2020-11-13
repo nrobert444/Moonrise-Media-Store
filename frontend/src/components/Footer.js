@@ -18,7 +18,7 @@ const Footer = () => {
           <Navbar.Collapse>
             <Row>
               <Col className='text-left'>
-                Copyright &copy; Moonrise Media LLC
+                Copyright &copy; 2020 Moonrise Media LLC All Rights Reserved
               </Col>
             </Row>
             <Nav className='ml-auto'>

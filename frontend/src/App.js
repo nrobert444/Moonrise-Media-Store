@@ -30,7 +30,7 @@ const App = () => {
       <GlobalStyle />
       <Router>
         <Header />
-        <main className='py-3 px-5'>
+        <main className='py-2 px-3'>
           <Route path='/order/:id' component={OrderPage} />
           <Route path='/shipping' component={ShippingPage} />
           <Route path='/payment' component={PaymentPage} />
