@@ -63,6 +63,7 @@ export const BackgroundImage = styled.div`
 export const CollectionFooterContainer = styled.div`
   width: 100%;
   height: 5%;
+  margin-bottom: 25px;
   display: flex;
   justify-content: space-around;
   font-size: 18px;

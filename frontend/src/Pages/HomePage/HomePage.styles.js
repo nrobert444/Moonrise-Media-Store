@@ -9,34 +9,22 @@ export const CollectionPreviewContainer = styled.div`
 
 export const TitleContainer = styled.h1`
   font-size: 28px;
-  margin: 40px 0 auto 0;
+  border-bottom: 2px solid black;
+  margin: 15px 0 30px 0;
   cursor: pointer;
-  &:hover {
-    color: grey;
-  }
-`
-
-export const PreviewContainer = styled.div`
-  display: flex;
-  justify-content: space-between;
-  @media screen and (max-width: 800px) {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 15px;
-  }
 `
 
 export const CollectionItemsContainer = styled.div`
-  width: auto;
   height: auto;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-gap: 15px;
+  grid-gap: 10px;
   margin-bottom: 25px;
 
   @media screen and (max-width: 800px) {
     grid-template-columns: 1fr 1fr;
     grid-gap: 15px;
+    margin-bottom: 15px;
   }
 `
 
