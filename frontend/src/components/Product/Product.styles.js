@@ -31,16 +31,21 @@ export const CollectionItemContainer = styled.div`
 `
 
 export const SeeMoreButton = styled(CustomButton)`
-  width: 80%;
+  width: 60%;
   opacity: 0.7;
   position: absolute;
-  top: 255px;
+  top: 235px;
   display: none;
   @media screen and (max-width: 600px) {
     display: block;
     opacity: 0.9;
     min-width: unset;
     padding: 0 10px;
+  }
+  @media screen and (max-width: 1600px) {
+    &:hover {
+      display: none;
+    }
   }
 `
 
@@ -53,7 +58,7 @@ export const BackgroundImage = styled.div`
   background-image: ${({ imageUrl }) => `url(${imageUrl})`};
 
   @media screen and (max-width: 1600px) {
-    background-size: 300px auto;
+    background-size: 250px auto;
     background-repeat: no-repeat;
     background-position: center;
     grid-gap: 0;

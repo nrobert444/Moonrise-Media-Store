@@ -10,7 +10,8 @@ import {
   CollectionPageContainer,
   CollectionTitle,
   CollectionItemsContainer,
-  PageContainer
+  PageContainer,
+  CategoryImageContainerGame
 } from './Collection.styles'
 
 const GamePage = ({ match }) => {
@@ -33,16 +34,19 @@ const GamePage = ({ match }) => {
       ) : error ? (
         <Message variant='danger'>{error}</Message>
       ) : (
-        <CollectionPageContainer>
-          <CollectionTitle>Games</CollectionTitle>
-          <CollectionItemsContainer>
-            {products
-              .filter(product => product.category === 'GAME')
-              .map(product => (
-                <Product product={product} />
-              ))}
-          </CollectionItemsContainer>
-        </CollectionPageContainer>
+        <>
+          <CategoryImageContainerGame />
+          <CollectionPageContainer>
+            <CollectionTitle>Games</CollectionTitle>
+            <CollectionItemsContainer>
+              {products
+                .filter(product => product.category === 'GAME')
+                .map(product => (
+                  <Product product={product} />
+                ))}
+            </CollectionItemsContainer>
+          </CollectionPageContainer>
+        </>
       )}
       <PageContainer>
         <GamePaginate pages={pages} page={page} />
