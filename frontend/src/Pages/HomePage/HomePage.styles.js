@@ -27,9 +27,11 @@ export const PreviewContainer = styled.div`
 `
 
 export const CollectionItemsContainer = styled.div`
+  width: auto;
+  height: auto;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-gap: 10px;
+  grid-gap: 15px;
   margin-bottom: 25px;
 
   @media screen and (max-width: 800px) {
