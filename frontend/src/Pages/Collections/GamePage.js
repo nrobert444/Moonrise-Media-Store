@@ -42,7 +42,7 @@ const GamePage = ({ match }) => {
               {products
                 .filter(product => product.category === 'GAME')
                 .map(product => (
-                  <Product product={product} />
+                  <Product key={product._id} product={product} />
                 ))}
             </CollectionItemsContainer>
           </CollectionPageContainer>

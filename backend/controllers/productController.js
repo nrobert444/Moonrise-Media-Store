@@ -5,7 +5,7 @@ import Product from '../models/productModel.js'
 //@route GET /api/products/
 //@access public
 const getProducts = asyncHandler(async (req, res) => {
-  const pageSize = 10
+  const pageSize = 12
   const page = Number(req.query.pageNumber) || 1
   const keyword = req.query.keyword
     ? {
@@ -26,7 +26,7 @@ const getProducts = asyncHandler(async (req, res) => {
 //@route GET /api/products/dvd/
 //@access public
 const getProductsCategoryDvd = asyncHandler(async (req, res) => {
-  const pageSize = 10
+  const pageSize = 12
   const page = Number(req.query.pageNumber) || 1
 
   const count = await Product.countDocuments({ category: /DVD/ })
@@ -39,7 +39,7 @@ const getProductsCategoryDvd = asyncHandler(async (req, res) => {
 //@route GET /api/products/bluray/
 //@access public
 const getProductsCategoryBluray = asyncHandler(async (req, res) => {
-  const pageSize = 10
+  const pageSize = 12
   const page = Number(req.query.pageNumber) || 1
 
   const count = await Product.countDocuments({ category: /Blu-Ray/ })
@@ -52,7 +52,7 @@ const getProductsCategoryBluray = asyncHandler(async (req, res) => {
 //@route GET /api/products/games/
 //@access public
 const getProductsCategoryGames = asyncHandler(async (req, res) => {
-  const pageSize = 10
+  const pageSize = 12
   const page = Number(req.query.pageNumber) || 1
 
   const count = await Product.countDocuments({ category: /GAME/ })

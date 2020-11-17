@@ -77,21 +77,21 @@ const HomePage = ({ match }) => {
               {products
                 .filter(product => product.category === 'DVD')
                 .map((product, idx) =>
-                  idx < 4 ? <Product product={product} /> : ''
+                  idx < 4 ? <Product key={product._id} product={product} /> : ''
                 )}
             </CollectionItemsContainer>
             <CollectionItemsContainer>
               {products
                 .filter(product => product.category === 'Blu-Ray')
                 .map((product, idx) =>
-                  idx < 4 ? <Product product={product} /> : ''
+                  idx < 4 ? <Product key={product._id} product={product} /> : ''
                 )}
             </CollectionItemsContainer>
             <CollectionItemsContainer>
               {products
                 .filter(product => product.category === 'GAME')
                 .map((product, idx) =>
-                  idx < 4 ? <Product product={product} /> : ''
+                  idx < 4 ? <Product key={product._id} product={product} /> : ''
                 )}
             </CollectionItemsContainer>
           </CollectionPreviewContainer>
