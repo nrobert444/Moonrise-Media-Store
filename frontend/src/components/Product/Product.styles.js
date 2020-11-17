@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import CustomButton from '../CustomButton/CustomButton'
 
 export const CollectionItemContainer = styled.div`
-  width: 22vw;
+  width: 25vw;
   display: flex;
   flex-direction: column;
   height: 350px;
@@ -31,10 +31,10 @@ export const CollectionItemContainer = styled.div`
 `
 
 export const SeeMoreButton = styled(CustomButton)`
-  width: 80%;
+  width: 60%;
   opacity: 0.7;
   position: absolute;
-  top: 255px;
+  top: 235px;
   display: none;
   @media screen and (max-width: 600px) {
     display: block;
@@ -42,20 +42,33 @@ export const SeeMoreButton = styled(CustomButton)`
     min-width: unset;
     padding: 0 10px;
   }
+  @media screen and (max-width: 1600px) {
+    &:hover {
+      display: none;
+    }
+  }
 `
 
 export const BackgroundImage = styled.div`
   width: 100%;
-  height: 95%;
+  height: 100%;
   background-size: cover;
   background-position: center;
   margin-bottom: 5px;
   background-image: ${({ imageUrl }) => `url(${imageUrl})`};
+
+  @media screen and (max-width: 1600px) {
+    background-size: 250px auto;
+    background-repeat: no-repeat;
+    background-position: center;
+    grid-gap: 0;
+  }
 `
 
 export const CollectionFooterContainer = styled.div`
   width: 100%;
   height: 5%;
+  margin-bottom: 25px;
   display: flex;
   justify-content: space-around;
   font-size: 18px;

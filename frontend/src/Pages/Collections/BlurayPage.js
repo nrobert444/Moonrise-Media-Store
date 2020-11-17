@@ -10,7 +10,8 @@ import {
   CollectionPageContainer,
   CollectionTitle,
   CollectionItemsContainer,
-  PageContainer
+  PageContainer,
+  CategoryImageContainerBluRay
 } from './Collection.styles'
 
 const BlurayPage = ({ match }) => {
@@ -34,16 +35,23 @@ const BlurayPage = ({ match }) => {
       ) : error ? (
         <Message variant='danger'>{error}</Message>
       ) : (
-        <CollectionPageContainer>
-          <CollectionTitle>Blu-Ray</CollectionTitle>
-          <CollectionItemsContainer>
-            {products
-              .filter(product => product.category === 'Blu-Ray')
-              .map(product => (
-                <Product key={product._id} product={product} />
-              ))}
-          </CollectionItemsContainer>
-        </CollectionPageContainer>
+        <>
+          <CategoryImageContainerBluRay>
+            <div className='header-content'>
+              <h1>Blu-Rays</h1>
+            </div>
+          </CategoryImageContainerBluRay>
+          <CollectionPageContainer>
+            <CollectionTitle>Blu-Ray</CollectionTitle>
+            <CollectionItemsContainer>
+              {products
+                .filter(product => product.category === 'Blu-Ray')
+                .map(product => (
+                  <Product key={product._id} product={product} />
+                ))}
+            </CollectionItemsContainer>
+          </CollectionPageContainer>
+        </>
       )}
       <PageContainer>
         <BluRayPaginate pages={pages} page={page} />
