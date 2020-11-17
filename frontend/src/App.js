@@ -1,5 +1,6 @@
 import React from 'react'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
+import ScrollToTop from './components/ScrollToTop'
 import { GlobalStyle } from './globalStyles'
 import Header from './components/Header'
 import AboutPage from './Pages/AboutPage'
@@ -29,6 +30,7 @@ const App = () => {
     <>
       <GlobalStyle />
       <Router>
+        <ScrollToTop />
         <Header />
         <main className='py-2 px-3'>
           <Route path='/order/:id' component={OrderPage} />
