@@ -52,8 +52,105 @@ npm run server
 
 ## API End Points
 
+### Product Routes
 
+#### GET
+- /api/products/
+  - get all products
+ 
+- /api/products/dvd/
+  - get all products with the category dvd
+  
+- /api/products/bluray/
+  - get all products with the category bluray
+  
+- /api/products/games
+  - get all products with the category games
 
+- /api/products/:id
+  -get product by id
+
+#### POST
+
+- /api/products/
+  - create a product. Admin only.
+  
+#### PUT
+- /api/products/:id
+  - update a product by id. Admin only.
+  
+#### DELETE
+- /api/products/:id
+  - delete a product by id. Admin Only.
+  
+### Order Routes
+
+#### GET
+- /api/orders/
+  - get all orders. Admin only
+ 
+- /api/orders/:id
+  - get order by id for current user.
+  
+- /api/orders/myorders
+  - get all orders associated with the current user
+#### POST
+
+- /api/orders/
+  - create an order.
+  
+#### PUT
+- /api/orders/:id/pay
+  - update an order by id as paid. Admin only.
+  
+- /api/orders/:id/deliver
+  - update an order by id as delivered. Admin only.
+
+### User Routes
+
+#### GET
+- /api/users/
+  - get all users. Admin only.
+ 
+- /api/users/profile
+  - get profile of current user.
+  
+- /api/users/:id
+  - get user by id. Admin only.
+
+#### POST
+
+- api/users/
+  - register a user
+
+- /api/users/login
+  - login a user.
+  
+#### PUT
+- /api/users/profile
+  - update current user's profile. 
+  
+- /api/users/:id
+  - update a user's profile. Admin only.
+  
+#### DELETE
+- /api/users/:id
+  - delete a user by id. Admin Only.
+  
+### Upload Routes
+
+#### POST
+
+-api/uploads/
+  - upload and image for creating a product. Admin only.
+  
+### Mail Routes
+-Optional
+#### POST
+
+-/api/send/
+  - send email to dedicated inbox.
+  
 ## Build & Deploy
 
 ```
