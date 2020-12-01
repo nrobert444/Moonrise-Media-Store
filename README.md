@@ -4,6 +4,7 @@ eCommerce platform built with React, Redux, Node/express, and MongoDb.
 This site was built to be utilized as an additional resource for my online retail store Moonrise Media LLC.
 
 
+<img width="1440" alt="Screen Shot 2020-11-24 at 10 18 21 AM" src="https://user-images.githubusercontent.com/56571134/100792938-4643e180-33d0-11eb-8d3f-478f86d36529.png">
 
 ## Features
 
@@ -48,6 +49,10 @@ npm run dev
 # Run backend only
 npm run server
 ```
+
+## API End Points
+
+
 
 ## Build & Deploy
 
